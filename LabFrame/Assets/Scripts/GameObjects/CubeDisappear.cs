@@ -20,10 +20,8 @@ public class CubeDisappear : MonoBehaviour
     }//積木碰到界線後消失
     IEnumerator RespwanCube()
     {
-        Vector3 position = Vector3.zero;//new Vector3(Random.Range((float)11.5, (float)13.5), (float)0.2, Random.Range((float)-8.9, (float)8.9));
+        Vector3 position = new Vector3((float)8.8, 2, Random.Range((float)-7.0, (float)7.0));
         //Quaternion rotation;
-        
-        
         Instantiate(cube, position, Quaternion.identity);
         Destroy(cube);
         yield return null;

@@ -5,20 +5,15 @@ using UnityEngine.UI;
 
 public class CubeExamination : MonoBehaviour
 {
-    public GameObject[] myCubes;
+    public Instantiate_Cube Elements;
+    public GameObject[] myCubes ;
     public List<Vector3> CubePosList;
     public List<Color> CubeColorList;
     public Button myStopButton;
-    //public Color CubeColor;
-    /*
-     * Shapes shapes;
-    enum Shapes
-    {
-        Cube, Cuboid, triangle, Cylinder
-    }
-    */
+    public static Vector3 CubeScale = new Vector3(1, 1, 1);
+    public static Vector3 CuboidScale = new Vector3(2, 1, 1);
+    int[] sequence = new int[5] { 21, 31, 23, 12, 13 };
 
-    
     public void ListCubes()
     {
         myStopButton = GetComponent<Button>();
@@ -43,20 +38,25 @@ public class CubeExamination : MonoBehaviour
             print("good");
     }
 
+    
     //檢查積木顏色
-    public int ExamineCubeColor(int i)
+    public int ExamineCubeColor(GameObject gameObject)
     {
-        if (CubeColorList[i] == Color.blue)
+        
+        //if (gameObject.color == Color.blue)
+        if(gameObject.GetComponent<MeshRenderer>().material.color == Color.blue)
         {
-            print("Correct color");
+            print("blue");
             return 1;
         }
-        if (CubeColorList[i] == Color.red)
+        if (gameObject.GetComponent<MeshRenderer>().material.color == Color.red)
         {
+            print("red");
             return 2;
         }
-        if (CubeColorList[i] == Color.green)
+        if (gameObject.GetComponent<MeshRenderer>().material.color == new Color32(0, 255,0, 255))
         {
+            print("green");
             return 3;
         }
         else
@@ -67,20 +67,42 @@ public class CubeExamination : MonoBehaviour
     }
 
     //檢查積木形狀
-      public int ExamineCubeShape(int i)
+      public int ExamineCubeShape(GameObject gameObject)
     {
         print("check shape");
-        Vector3 CubeScale = new Vector3(1, 1, 1);
-        Vector3 CuboidScale = new Vector3(2, 1, 1);
-        if (myCubes[i].transform.localScale == CubeScale)
+        if (gameObject.transform.localScale == CuboidScale)
         {
             print("A cube");
+            return 10;
+        }
+        if (gameObject.transform.localScale == CuboidScale)
+        {
+            print("A cuboid");
+            return 20;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public int ExaminePosition(int i)
+    {
+        print("check pos");
+        if (Elements.Cubes[i])
+        {
+            print("above");
             return 1;
         }
         if (myCubes[i].transform.localScale == CuboidScale)
         {
-            print("A cuboid");
+            print("right");
             return 2;
+        }
+        if (myCubes[i].transform.localScale == CuboidScale)
+        {
+            print("left");
+            return 3;
         }
         else
         {
@@ -95,19 +117,40 @@ public class CubeExamination : MonoBehaviour
     //}
     public void CheckIfCorrect()
     {
-        for(int i= 0; i<myCubes.Length; i++)
-        {
-            int rnt1 = ExamineCubeColor(i);
-            int rnt2 = ExamineCubeShape(i);
-            if(rnt1 == 1 && rnt2 == 1)
-            {
-                print("congrats its blue cube");
-            }
-            if (rnt1 == 2 && rnt2 == 1)
-            {
-                print("congrats its red cube");
-            }
-        }
+        
+        //for(int i= 0; i<myCubes.Length; i++)
+        //{
+        //    int rnt1 = ExamineCubeColor(i);
+        //    int rnt2 = ExamineCubeShape(i);
+
+            //cube
+         //   if(rnt1 == 1 && rnt2 == 1)
+         //   {
+         //       print("congrats its blue cube");
+         //   }
+         //   if (rnt1 == 2 && rnt2 == 1)
+         //   {
+         //       print("congrats its red cube");
+         //   }
+         //   if (rnt1 == 3 && rnt2 == 1)
+         //   {
+         //       print("congrats its green cube");
+         //   }
+
+            //cuboid
+         //   if (rnt1 == 1 && rnt2 == 2)
+         //   {
+         //       print("congrats its blue cuboid");
+         //   }
+         //   if (rnt1 == 2 && rnt2 == 2)
+         //   {
+         //       print("congrats its red cuboid");
+         //   }
+         //   if (rnt1 == 2 && rnt2 == 2)
+         //   {
+         //       print("congrats its green cuboid");
+         //   }
+        //}
     }
 
 
