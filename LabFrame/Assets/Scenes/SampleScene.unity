@@ -441,7 +441,7 @@ PrefabInstance:
     - target: {fileID: 588047413323112886, guid: f80db9391f2889a40aa06d8f241bfeee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.89
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 588047413323112886, guid: f80db9391f2889a40aa06d8f241bfeee,
         type: 3}
@@ -780,17 +780,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab25907fe0fdaa41b15a36f2f639a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Elements: {fileID: 0}
-  myCubes:
-  - {fileID: 368162580216607788, guid: cd60214396271014ea04a5688903b434, type: 3}
-  - {fileID: 6676290872566748029, guid: 167bbd74cfdcf0b44a7e350fdeaeb6eb, type: 3}
-  - {fileID: 5801437001931497600, guid: 28a17b0a589c3c94fb4fe14f4d923853, type: 3}
-  - {fileID: 1343204903450270894, guid: ae4cce7d400a7b449b8b859208fa29d6, type: 3}
-  - {fileID: 8879883774477111993, guid: bb903bc18dda96341ba1e6a11ec85020, type: 3}
-  - {fileID: 5050638112479571873, guid: c611491e7115fce43a6f2432c536be8c, type: 3}
+  myStopButton: {fileID: 440682399}
+  Instantiate: {fileID: 160879406}
+  myCubeList: []
   CubePosList: []
   CubeColorList: []
-  myStopButton: {fileID: 440682399}
+  sequence: 150000001f000000160000000c00000020000000
 --- !u!1 &441272761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,7 +1370,7 @@ PrefabInstance:
     - target: {fileID: 5738208098700188311, guid: 559c9437765053f4dae86e3a5d9d47f1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5738208098700188311, guid: 559c9437765053f4dae86e3a5d9d47f1,
         type: 3}
@@ -1425,17 +1420,17 @@ PrefabInstance:
     - target: {fileID: 5738208098700188311, guid: 559c9437765053f4dae86e3a5d9d47f1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 12.67986
       objectReference: {fileID: 0}
     - target: {fileID: 5738208098700188311, guid: 559c9437765053f4dae86e3a5d9d47f1,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 15
+      value: 11.73333
       objectReference: {fileID: 0}
     - target: {fileID: 5738208098700188311, guid: 559c9437765053f4dae86e3a5d9d47f1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5738208098700188309, guid: 559c9437765053f4dae86e3a5d9d47f1,
         type: 3}
@@ -1724,7 +1719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.5
+      value: -6.85
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z

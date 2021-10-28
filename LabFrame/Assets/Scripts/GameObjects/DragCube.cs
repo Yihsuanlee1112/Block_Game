@@ -6,7 +6,7 @@ public class DragCube : MonoBehaviour
 {
     private Vector3 mOffset;
     private float mZCoord;
-
+    public Rigidbody rigidbody;
     public bool dragDisabled = true;
 
     void Start()
@@ -15,6 +15,7 @@ public class DragCube : MonoBehaviour
     }
     void OnMouseDown()
     {
+        rigidbody.constraints = RigidbodyConstraints.None;
         if (!dragDisabled) return;
 
         print(this.gameObject.name);
@@ -43,5 +44,17 @@ public class DragCube : MonoBehaviour
         if (!dragDisabled) return;
 
         transform.position = GetMouseAsWorldPoint() + mOffset;
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Build"))
+        {
+            FreezPosition();
+        }
+    }
+    public void FreezPosition()
+    {
+        rigidbody.constraints = RigidbodyConstraints.FreezeAll;
     }
 }
