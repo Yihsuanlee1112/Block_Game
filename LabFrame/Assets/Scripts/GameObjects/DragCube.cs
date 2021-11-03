@@ -46,7 +46,8 @@ public class DragCube : MonoBehaviour
         transform.position = GetMouseAsWorldPoint() + mOffset;
     }
 
-    public void OnCollisionEnter(Collision collision)
+    /*
+     * public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Build"))
         {
@@ -57,4 +58,5 @@ public class DragCube : MonoBehaviour
     {
         rigidbody.constraints = RigidbodyConstraints.FreezeAll;
     }
+    */
 }
