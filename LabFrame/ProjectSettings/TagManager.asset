@@ -9,6 +9,8 @@ TagManager:
   - Build
   - table
   - button
+  - floor
+  - question
   layers:
   - Default
   - TransparentFX
