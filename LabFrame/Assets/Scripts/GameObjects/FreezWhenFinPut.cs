@@ -20,6 +20,7 @@ public class FreezWhenFinPut : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Build"))
         {
+            print("fff");
             FreezPosition();
         }
     }

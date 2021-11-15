@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 5986941998889747423}
   - component: {fileID: 3523466780056135852}
   - component: {fileID: -3482384940463142374}
-  - component: {fileID: 8847283291764295843}
   m_Layer: 0
   m_Name: GreenCube
   m_TagString: cube
@@ -108,7 +107,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 5
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -126,7 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f7b9dd6c603fb4b97b7322ac6c2a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 5801437001931497603}
   dragDisabled: 1
 --- !u!114 &5986941998889747423
 MonoBehaviour:
@@ -247,16 +245,3 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
---- !u!114 &8847283291764295843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801437001931497600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fa8e7477a18a9c46be738de6d607bb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody: {fileID: 5801437001931497603}
