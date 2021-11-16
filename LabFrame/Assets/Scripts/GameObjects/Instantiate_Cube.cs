@@ -22,8 +22,8 @@ public class Instantiate_Cube : MonoBehaviour
     void Start()
     {
         //玩家可選題目
-        //int RandomQuestion = 1;
-        int RandomQuestion = Random.Range(1, 4);
+        int RandomQuestion = 1;
+        //int RandomQuestion = Random.Range(1, 4);
         if (RandomQuestion == 1)
         {
             Question_1();

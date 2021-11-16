@@ -20,6 +20,7 @@ public class CubeDisappear : MonoBehaviour
     }//積木碰到界線後消失
     public void RespawnCube()
     {
+        print("gone");
          this.transform.position =  new Vector3(12, 2, Random.Range((float)-7.0, (float)7.0));
     }
     //IEnumerator RespwanCube()

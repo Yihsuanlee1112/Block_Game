@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5653061204827785940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5653061204827785941}
+  - component: {fileID: 5653061204827785930}
+  m_Layer: 0
+  m_Name: InstantiateCube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5653061204827785941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653061204827785940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5653061204827785930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653061204827785940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568fe4ae4a1a62546a95aa3af4a5df5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InstantiateCube: {fileID: 5653061204827785940}
+  Question_Prefabs:
+  - {fileID: 1716922308912570150, guid: c1911bd96b56fa449ba08e510b357d34, type: 3}
+  - {fileID: 7657213066769938492, guid: 2aea82ec2509922478849a329c36c733, type: 3}
+  - {fileID: 2440332475355773570, guid: 332d285f26f7aa8499c41386594f79b9, type: 3}
+  - {fileID: 5764169205940087888, guid: 730342d0c83ebb447b7d990294bfe044, type: 3}
+  Q1_Cube_Prefabs:
+  - {fileID: 368162580216607788, guid: cd60214396271014ea04a5688903b434, type: 3}
+  - {fileID: 6676290872566748029, guid: 167bbd74cfdcf0b44a7e350fdeaeb6eb, type: 3}
+  - {fileID: 7514614011664070911, guid: 244332ce944ffbc4d8b6b1c7294ffda1, type: 3}
+  - {fileID: 1343204903450270894, guid: ae4cce7d400a7b449b8b859208fa29d6, type: 3}
+  - {fileID: 2698272201905719044, guid: ea78259103442024ebdcbfbfe7261e56, type: 3}
+  - {fileID: 8879883774477111993, guid: bb903bc18dda96341ba1e6a11ec85020, type: 3}
+  - {fileID: 5050638112479571873, guid: c611491e7115fce43a6f2432c536be8c, type: 3}
+  - {fileID: 6335167980752280114, guid: fc90cf271ff6b2147bfbb4af46612194, type: 3}
+  - {fileID: 5050638112479571873, guid: 1168af2992d2375459c3fff3568dd525, type: 3}
+  - {fileID: 6335167980752280114, guid: e390a097f3776f84f88712ecc949e366, type: 3}
+  Q2_Cube_Prefabs:
+  - {fileID: 7514614011664070911, guid: 244332ce944ffbc4d8b6b1c7294ffda1, type: 3}
+  - {fileID: 1343204903450270894, guid: ae4cce7d400a7b449b8b859208fa29d6, type: 3}
+  - {fileID: 7514614011664070911, guid: 244332ce944ffbc4d8b6b1c7294ffda1, type: 3}
+  - {fileID: 5050638112479571873, guid: c611491e7115fce43a6f2432c536be8c, type: 3}
+  - {fileID: 5050638112479571873, guid: ecd0384fb25d87a4caf85b21acf76ea4, type: 3}
+  - {fileID: 1343204903450270894, guid: ae4cce7d400a7b449b8b859208fa29d6, type: 3}
+  - {fileID: 6676290872566748029, guid: 167bbd74cfdcf0b44a7e350fdeaeb6eb, type: 3}
+  - {fileID: 8879883774477111993, guid: 5e04b653fd219a547884c84aaebf1a6c, type: 3}
+  - {fileID: 5050638112479571873, guid: ecd0384fb25d87a4caf85b21acf76ea4, type: 3}
+  - {fileID: 5050638112479571873, guid: c611491e7115fce43a6f2432c536be8c, type: 3}
+  Q3_Cube_Prefabs:
+  - {fileID: 6676290872566748029, guid: 167bbd74cfdcf0b44a7e350fdeaeb6eb, type: 3}
+  - {fileID: 5801437001931497600, guid: 28a17b0a589c3c94fb4fe14f4d923853, type: 3}
+  - {fileID: 5050638112479571873, guid: c611491e7115fce43a6f2432c536be8c, type: 3}
+  - {fileID: 6676290872566748029, guid: 167bbd74cfdcf0b44a7e350fdeaeb6eb, type: 3}
+  - {fileID: 5801437001931497600, guid: 28a17b0a589c3c94fb4fe14f4d923853, type: 3}
+  - {fileID: 6676290872566748029, guid: 167bbd74cfdcf0b44a7e350fdeaeb6eb, type: 3}
+  - {fileID: 6335167980752280114, guid: e390a097f3776f84f88712ecc949e366, type: 3}
+  - {fileID: 5801437001931497600, guid: 28a17b0a589c3c94fb4fe14f4d923853, type: 3}
+  - {fileID: 6676290872566748029, guid: 167bbd74cfdcf0b44a7e350fdeaeb6eb, type: 3}
+  - {fileID: 5050638112479571873, guid: c611491e7115fce43a6f2432c536be8c, type: 3}
+  Q4_Cube_Prefabs:
+  - {fileID: 1343204903450270894, guid: ae4cce7d400a7b449b8b859208fa29d6, type: 3}
+  - {fileID: 5050638112479571873, guid: c611491e7115fce43a6f2432c536be8c, type: 3}
+  - {fileID: 5050638112479571873, guid: ecd0384fb25d87a4caf85b21acf76ea4, type: 3}
+  - {fileID: 6676290872566748029, guid: 167bbd74cfdcf0b44a7e350fdeaeb6eb, type: 3}
+  - {fileID: 5050638112479571873, guid: c611491e7115fce43a6f2432c536be8c, type: 3}
+  - {fileID: 5050638112479571873, guid: 1168af2992d2375459c3fff3568dd525, type: 3}
+  - {fileID: 5050638112479571873, guid: c611491e7115fce43a6f2432c536be8c, type: 3}
+  - {fileID: 6676290872566748029, guid: 167bbd74cfdcf0b44a7e350fdeaeb6eb, type: 3}
+  - {fileID: 5050638112479571873, guid: 1168af2992d2375459c3fff3568dd525, type: 3}
+  - {fileID: 5801437001931497600, guid: 28a17b0a589c3c94fb4fe14f4d923853, type: 3}
+  Cubes: []
