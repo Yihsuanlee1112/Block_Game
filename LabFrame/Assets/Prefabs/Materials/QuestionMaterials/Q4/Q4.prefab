@@ -167,8 +167,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0.5, y: 0.5, z: -0.5}
+  m_Size: {x: 1, y: 0.03, z: 0.5}
+  m_Center: {x: 0.5, y: 0.03, z: -0.5}
 --- !u!114 &2209100937950194801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,8 +192,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0.5, y: 0.5, z: -0.5}
+  m_Size: {x: 0.5, y: 0.03, z: 1}
+  m_Center: {x: 0.5, y: 0.03, z: -0.5}
 --- !u!114 &5370743684985373501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,8 +295,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0.5, y: 0.5, z: -0.5}
+  m_Size: {x: 1, y: 0.03, z: 0.5}
+  m_Center: {x: 0.5, y: 0.03, z: -0.5}
 --- !u!114 &6268513763882836657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,8 +710,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0.5, y: 0.5, z: -0.5}
+  m_Size: {x: 0.5, y: 0.03, z: 0.5}
+  m_Center: {x: 0.5, y: 0.03, z: -0.5}
 --- !u!114 &7853157165082631335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,8 +735,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0.5, y: 0.5, z: -0.5}
+  m_Size: {x: 0.5, y: 0.03, z: 1}
+  m_Center: {x: 0.5, y: 0.03, z: -0.5}
 --- !u!114 &485635498697731926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,8 +760,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0.5, y: 0.5, z: -0.5}
+  m_Size: {x: 0.5, y: 0.03, z: 1}
+  m_Center: {x: 0.5, y: 0.03, z: -0.5}
 --- !u!114 &1857509967658748602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 3153616610291321842}
   m_Layer: 0
   m_Name: Q4
-  m_TagString: Untagged
+  m_TagString: question
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -825,8 +825,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0.5, y: 0.5, z: -0.5}
+  m_Size: {x: 0.5, y: 0.03, z: 1}
+  m_Center: {x: 0.5, y: 0.03, z: -0.5}
 --- !u!114 &5924633505726991002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,8 +850,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0.5, y: 0.5, z: -0.5}
+  m_Size: {x: 0.7, y: 0.03, z: 0.5}
+  m_Center: {x: 0.5, y: 0.03, z: -0.5}
 --- !u!114 &6256912348757306566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,8 +875,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0.5, y: 0.5, z: -0.5}
+  m_Size: {x: 0.5, y: 0.03, z: 1}
+  m_Center: {x: 0.5, y: 0.03, z: -0.5}
 --- !u!114 &5500740992869986573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1056,8 +1056,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0.5, y: 0.5, z: -0.5}
+  m_Size: {x: 0.5, y: 0.03, z: 1}
+  m_Center: {x: 0.5, y: 0.03, z: -0.5}
 --- !u!114 &3436672119195015886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1898,6 +1898,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5416840472756881886, guid: 4cefddfbdd05cbe418db60f8e6d30c5d,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1610888429460111736, guid: 4cefddfbdd05cbe418db60f8e6d30c5d,
         type: 3}

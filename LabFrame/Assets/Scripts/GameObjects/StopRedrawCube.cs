@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class StopRedrawCube : MonoBehaviour
 {
-    //public GameObject cube;
     public GameObject[] Cube;
+    public GameObject[] Cube2;
+    public GameObject[] Cuboid;
+    public GameObject[] Cuboid3;
     public Button myStopButton;
 
     private void Start()
@@ -22,7 +24,23 @@ public class StopRedrawCube : MonoBehaviour
             //GetComponent<CubeDisappear>().enabled = false;
             //GetComponent<DragCube>().enabled = false;
             Cube = GameObject.FindGameObjectsWithTag("cube");
+            Cube2 = GameObject.FindGameObjectsWithTag("cube2");
+            Cuboid = GameObject.FindGameObjectsWithTag("cuboid");
+            Cuboid3 = GameObject.FindGameObjectsWithTag("cuboid3");
+            
             foreach (GameObject cube in Cube)
+            {
+                cube.GetComponent<DragCube>().dragDisabled = false;
+            }
+            foreach (GameObject cube in Cube2)
+            {
+                cube.GetComponent<DragCube>().dragDisabled = false;
+            }
+            foreach (GameObject cube in Cuboid)
+            {
+                cube.GetComponent<DragCube>().dragDisabled = false;
+            }
+            foreach (GameObject cube in Cuboid3)
             {
                 cube.GetComponent<DragCube>().dragDisabled = false;
             }

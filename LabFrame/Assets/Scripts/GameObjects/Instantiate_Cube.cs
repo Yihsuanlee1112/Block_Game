@@ -6,6 +6,7 @@ public class Instantiate_Cube : MonoBehaviour
 {
     public GameObject InstantiateCube; //物件的生成點。
     [Header("Question Prefabs")]
+    //[System.NonSerialized]
     public List<GameObject> Question_Prefabs;
     [Header("Cube Prefabs")]
     public List<GameObject> Q1_Cube_Prefabs;
@@ -62,47 +63,45 @@ public class Instantiate_Cube : MonoBehaviour
 
         //要生成的物件。
 
-        //BlueCube
-        //position = new Vector3(Random.Range((float)8.3, (float)9.3), 2, Random.Range((float)-7.0, (float)7.0));
-        position = new Vector3(12, (float)1.5, 6);
+        //BlueCuboid3
+        position = new Vector3(12, (float)1.5, -4);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[0], position, Quaternion.identity));
 
-        //BlueCuboid
-        //position = new Vector3((float)8.8, 2, Random.Range((float)-7.0, (float)7.0));
-        position = new Vector3(12, (float)1.5, (float)4.5);
+        //RedCuboid3
+        position = new Vector3(12, (float)1.5, (float)-5.5);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[1], position, Quaternion.identity));
 
-        //BlueCuboid3
-        //position = new Vector3(Random.Range((float)8.3, (float)9.3), 2, Random.Range((float)-7.0, (float)7.0));
-        position = new Vector3(12, (float)1.5, 3);
+        //GreenCuboid3
+        position = new Vector3(12, (float)1.5, -1);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[2], position, Quaternion.identity));
 
-        //GreenCuboid
-        //position = new Vector3((float)8.8, 2, Random.Range((float)-7.0, (float)7.0));
-        position = new Vector3(12, (float)1.5, (float) 1.5);
+        //YellowCuboid3
+        position = new Vector3(12, (float)1.5, (float)0.5);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[3], position, Quaternion.identity));
 
-        //GreenCuboid3
-        //position = new Vector3(Random.Range((float)8.3, (float)9.3), 2, Random.Range((float)-7.0, (float)7.0));
-        position = new Vector3(12, (float)1.5, (float)0.5);
+        //BlueCuboid
+        position = new Vector3(12, (float)1.5, 2);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[4], position, Quaternion.identity));
 
-        //RedCube
-        //position = new Vector3((float)8.8, 2, Random.Range((float)-7.0, (float)7.0));
-        //rotation = Quaternion.Euler(new Vector3(Random.Range(0.0f, 90.0f), Random.Range(0.0f, 90.0f), 0));
-        position = new Vector3(12, (float)1.5, (float)-0.5);
-        Cubes.Add(Instantiate(Q1_Cube_Prefabs[5], position, Quaternion.identity));
         //RedCuboid
-        position = new Vector3(12, (float)1.5, (float)-1.5);
+        //rotation = Quaternion.Euler(new Vector3(Random.Range(0.0f, 90.0f), Random.Range(0.0f, 90.0f), 0));
+        position = new Vector3(12, (float)1.5, (float)3.5);
+        Cubes.Add(Instantiate(Q1_Cube_Prefabs[5], position, Quaternion.identity));
+
+        //GreenCuboid
+        position = new Vector3(12, (float)1.5, -7);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[6], position, Quaternion.identity));
-        //RedCuboid3
-        position = new Vector3(12, (float)1.5, -3);
-        Cubes.Add(Instantiate(Q1_Cube_Prefabs[7], position, Quaternion.identity));
+
         //YellowCuboid
-        position = new Vector3(12, (float)1.5, (float)-4.5);
+        position = new Vector3(12, (float)1.5, (float)6.5);
+        Cubes.Add(Instantiate(Q1_Cube_Prefabs[7], position, Quaternion.identity));
+
+        //BlueCube
+        position = new Vector3(12, (float)1.5, 5);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[8], position, Quaternion.identity));
-        //YellowCuboid3
-        position = new Vector3(12, (float)1.5, -6);
+
+        //RedCube
+        position = new Vector3(12, (float)1.5, (float)-2.5);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[9], position, Quaternion.identity));
     }
     public void Question_2()
@@ -114,44 +113,42 @@ public class Instantiate_Cube : MonoBehaviour
         //要生成的物件。
 
         //BlueCuboid3
-        //position = new Vector3(Random.Range((float)8.3, (float)9.3), 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, 6);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[0], position, Quaternion.identity));
 
         //GreenCuboid
-        //position = new Vector3((float)8.8, 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, (float)4.5);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[1], position, Quaternion.identity));
 
         //BlueCuboid3
-        //position = new Vector3(Random.Range((float)8.3, (float)9.3), 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, 3);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[2], position, Quaternion.identity));
 
         //RedCuboid
-        //position = new Vector3((float)8.8, 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, (float) 1.5);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[3], position, Quaternion.identity));
 
         //YellowCube
-        //position = new Vector3(Random.Range((float)8.3, (float)9.3), 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, (float)0.5);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[4], position, Quaternion.identity));
 
         //GreenCuboid
-        //position = new Vector3((float)8.8, 2, Random.Range((float)-7.0, (float)7.0));
         //rotation = Quaternion.Euler(new Vector3(Random.Range(0.0f, 90.0f), Random.Range(0.0f, 90.0f), 0));
         position = new Vector3(12, (float)1.5, (float)-0.5);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[5], position, Quaternion.identity));
+
         //BlueCuboid
         position = new Vector3(12, (float)1.5, (float)-1.5);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[6], position, Quaternion.identity));
+
         //RedCube2
         position = new Vector3(12, (float)1.5, -3);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[7], position, Quaternion.identity));
+
         //YellowCube
         position = new Vector3(12, (float)1.5, (float)-4.5);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[8], position, Quaternion.identity));
+
         //RedCuboid
         position = new Vector3(12, (float)1.5, -6);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[9], position, Quaternion.identity));
@@ -165,44 +162,42 @@ public class Instantiate_Cube : MonoBehaviour
         //要生成的物件。
 
         //BlueCuboid
-        //position = new Vector3(Random.Range((float)8.3, (float)9.3), 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, 6);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[0], position, Quaternion.identity));
 
         //GreenCube
-        //position = new Vector3((float)8.8, 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, (float)4.5);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[1], position, Quaternion.identity));
 
         //RedCuboid
-        //position = new Vector3(Random.Range((float)8.3, (float)9.3), 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, 3);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[2], position, Quaternion.identity));
 
         //BlueCuboid
-        //position = new Vector3((float)8.8, 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, (float) 1.5);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[3], position, Quaternion.identity));
 
         //GreenCube
-        //position = new Vector3(Random.Range((float)8.3, (float)9.3), 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, (float)0.5);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[4], position, Quaternion.identity));
 
         //BlueCuboid
-        //position = new Vector3((float)8.8, 2, Random.Range((float)-7.0, (float)7.0));
         //rotation = Quaternion.Euler(new Vector3(Random.Range(0.0f, 90.0f), Random.Range(0.0f, 90.0f), 0));
         position = new Vector3(12, (float)1.5, (float)-0.5);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[5], position, Quaternion.identity));
+
         //YellowCuboid3
         position = new Vector3(12, (float)1.5, (float)-1.5);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[6], position, Quaternion.identity));
+
         //GreenCube
         position = new Vector3(12, (float)1.5, -3);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[7], position, Quaternion.identity));
+
         //BlueCuboid
         position = new Vector3(12, (float)1.5, (float)-4.5);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[8], position, Quaternion.identity));
+
         //RedCuboid
         position = new Vector3(12, (float)1.5, -6);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[9], position, Quaternion.identity));
@@ -216,44 +211,42 @@ public class Instantiate_Cube : MonoBehaviour
         //要生成的物件。
 
         //GreenCuboid
-        //position = new Vector3(Random.Range((float)8.3, (float)9.3), 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, 6);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[0], position, Quaternion.identity));
 
         //RedCuboid
-        //position = new Vector3((float)8.8, 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, (float)4.5);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[1], position, Quaternion.identity));
 
         //YellowCube
-        //position = new Vector3(Random.Range((float)8.3, (float)9.3), 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, 3);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[2], position, Quaternion.identity));
 
         //BlueCuboid
-        //position = new Vector3((float)8.8, 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, (float) 1.5);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[3], position, Quaternion.identity));
 
         //RedCuboid
-        //position = new Vector3(Random.Range((float)8.3, (float)9.3), 2, Random.Range((float)-7.0, (float)7.0));
         position = new Vector3(12, (float)1.5, (float)0.5);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[4], position, Quaternion.identity));
 
         //YellowCuboid
-        //position = new Vector3((float)8.8, 2, Random.Range((float)-7.0, (float)7.0));
         //rotation = Quaternion.Euler(new Vector3(Random.Range(0.0f, 90.0f), Random.Range(0.0f, 90.0f), 0));
         position = new Vector3(12, (float)1.5, (float)-0.5);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[5], position, Quaternion.identity));
+
         //RedCuboid
         position = new Vector3(12, (float)1.5, (float)-1.5);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[6], position, Quaternion.identity));
+
         //BlueCuboid
         position = new Vector3(12, (float)1.5, -3);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[7], position, Quaternion.identity));
+
         //YellowCuboid
         position = new Vector3(12, (float)1.5, (float)-4.5);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[8], position, Quaternion.identity));
+
         //GreenCuboid
         position = new Vector3(12, (float)1.5, -6);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[9], position, Quaternion.identity));

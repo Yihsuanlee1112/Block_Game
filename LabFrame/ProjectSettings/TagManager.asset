@@ -11,6 +11,11 @@ TagManager:
   - button
   - floor
   - question
+  - hand
+  - body
+  - cuboid
+  - cuboid3
+  - cube2
   layers:
   - Default
   - TransparentFX

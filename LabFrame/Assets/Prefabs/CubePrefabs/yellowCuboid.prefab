@@ -17,12 +17,13 @@ GameObject:
   - component: {fileID: 5915013550494460136}
   - component: {fileID: 7057836682900384937}
   - component: {fileID: 7572460393927217038}
+  - component: {fileID: -9077280975477917458}
   m_Layer: 0
-  m_Name: yellowCuboid
-  m_TagString: cube
+  m_Name: YellowCuboid
+  m_TagString: cuboid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5050638112479571885
 Transform:
@@ -245,3 +246,22 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
+--- !u!95 &-9077280975477917458
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050638112479571873}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a15e497a358dab1438aad9fff5b986b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
