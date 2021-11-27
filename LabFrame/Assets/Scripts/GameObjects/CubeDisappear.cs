@@ -22,6 +22,7 @@ public class CubeDisappear : MonoBehaviour
     {
         print("gone");
         //this.transform.position =  new Vector3(12, 2, Random.Range((float)-7.0, (float)7.0));
+        this.GetComponent<Animator>().enabled = false;
         this.transform.SetPositionAndRotation(new Vector3(12, 2, Random.Range((float)-7.0, (float)7.0)), Quaternion.Euler(new Vector3(0, 0, 0)));
         CheckWhichCube();
         //print("set");
@@ -43,6 +44,7 @@ public class CubeDisappear : MonoBehaviour
         {
             print("cuboid3");
             this.transform.localScale = new Vector3(3, 1, 1);
+            print(this.transform.localScale);
             
         }
         if (this.tag == "cube2")

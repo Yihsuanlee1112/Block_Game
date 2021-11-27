@@ -9,7 +9,7 @@ public class putCube : MonoBehaviour
     //public Rigidbody rigidbody;
     //private DragCube isDragging;
     //private CubeDisappear cubeDisappear;
-    private Instantiate_Cube findCube;
+    public GameObject[] Q1_Cube;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +39,12 @@ public class putCube : MonoBehaviour
         if (gameObject.name == cubeName)
         {
             print("stick");
-            //answerCube.transform.position = gameObject.GetComponent<Transform>().position; //+ new Vector3(0.5f, 0.5f, -0.5f);
+            GetComponent<CheckFormerCube>();
             answerCube.transform.localScale = gameObject.transform.localScale;
             answerCube.transform.rotation = gameObject.transform.rotation;
             answerCube.transform.parent = gameObject.transform;
             answerCube.transform.localPosition = new Vector3(0.5f, 0.5f, -0.5f);//相對於父物件的位置
+            //CheckformerCube();
             answerCube.GetComponent<Animator>().enabled = false;
             //print("hit");
             print(gameObject.GetComponent<Transform>().position);
@@ -91,15 +92,6 @@ public class putCube : MonoBehaviour
             
         }   
     }
-    public void CheckformerCube()
-    {
-        findCube = GetComponent<Instantiate_Cube>();
-        if(findCube.Cubes[-1])
-        {
-
-        }
-
-        }
-        //    Cubes[str.Length - 1])
+    //    Cubes[Cubes.Length - 1])
 }
 

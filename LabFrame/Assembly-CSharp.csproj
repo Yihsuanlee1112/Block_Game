@@ -326,6 +326,7 @@
     <Compile Include="Assets\LabDataVisualization\ViveEye\ViveSR\Scripts\SRanipal_Eye_Framework.cs" />
     <Compile Include="Assets\LabDataVisualization\ViveEye\ViveSR\Scripts\SRanipal_EyeShapeTableDrawer.cs" />
     <Compile Include="Assets\LabDataVisualization\ViveEye\ViveSR\Scripts\SRWorks_Enums.cs" />
+    <Compile Include="Assets\Scripts\GameObjects\CheckFormerCube.cs" />
     <Compile Include="Assets\Scripts\GameObjects\CubeDisappear.cs" />
     <Compile Include="Assets\Scripts\GameObjects\CubeExamination.cs" />
     <Compile Include="Assets\Scripts\GameObjects\CubeStickToQuestion.cs" />

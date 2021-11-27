@@ -25,6 +25,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648e79881c916246893ebfb595ede08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Q1_Cube:
+  - {fileID: 7514614011664070911, guid: 244332ce944ffbc4d8b6b1c7294ffda1, type: 3}
+  - {fileID: 6335167980752280114, guid: fc90cf271ff6b2147bfbb4af46612194, type: 3}
+  - {fileID: 2698272201905719044, guid: ea78259103442024ebdcbfbfe7261e56, type: 3}
+  - {fileID: 6335167980752280114, guid: e390a097f3776f84f88712ecc949e366, type: 3}
+  - {fileID: 6676290872566748029, guid: 167bbd74cfdcf0b44a7e350fdeaeb6eb, type: 3}
+  - {fileID: 5050638112479571873, guid: c611491e7115fce43a6f2432c536be8c, type: 3}
+  - {fileID: 1343204903450270894, guid: ae4cce7d400a7b449b8b859208fa29d6, type: 3}
+  - {fileID: 5050638112479571873, guid: 1168af2992d2375459c3fff3568dd525, type: 3}
+  - {fileID: 368162580216607788, guid: cd60214396271014ea04a5688903b434, type: 3}
+  - {fileID: 8879883774477111993, guid: bb903bc18dda96341ba1e6a11ec85020, type: 3}
 --- !u!1 &972162151050688557
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648e79881c916246893ebfb595ede08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Q1_Cube: []
 --- !u!65 &3879548338380854363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -153,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648e79881c916246893ebfb595ede08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Q1_Cube: []
 --- !u!65 &1215957791715068835
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -178,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648e79881c916246893ebfb595ede08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Q1_Cube: []
 --- !u!1 &1590974291628660716
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648e79881c916246893ebfb595ede08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Q1_Cube: []
 --- !u!1 &4175913447385957421
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,6 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648e79881c916246893ebfb595ede08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Q1_Cube: []
 --- !u!65 &1223731457420744874
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -749,6 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648e79881c916246893ebfb595ede08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Q1_Cube: []
 --- !u!1 &5139640380955262004
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,6 +947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648e79881c916246893ebfb595ede08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Q1_Cube: []
 --- !u!1 &6226299438502768641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,6 +1051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648e79881c916246893ebfb595ede08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Q1_Cube: []
 --- !u!1 &6484237384871039093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,6 +1311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648e79881c916246893ebfb595ede08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Q1_Cube: []
 --- !u!1001 &2559088008491865199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2042,12 +2062,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4424287216438175917, guid: 4cefddfbdd05cbe418db60f8e6d30c5d,
+    - target: {fileID: 5416840472756881886, guid: 4cefddfbdd05cbe418db60f8e6d30c5d,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 5416840472756881886, guid: 4cefddfbdd05cbe418db60f8e6d30c5d,
+    - target: {fileID: 4424287216438175917, guid: 4cefddfbdd05cbe418db60f8e6d30c5d,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2234,12 +2254,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4424287216438175917, guid: 4cefddfbdd05cbe418db60f8e6d30c5d,
+    - target: {fileID: 5416840472756881886, guid: 4cefddfbdd05cbe418db60f8e6d30c5d,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 5416840472756881886, guid: 4cefddfbdd05cbe418db60f8e6d30c5d,
+    - target: {fileID: 4424287216438175917, guid: 4cefddfbdd05cbe418db60f8e6d30c5d,
         type: 3}
       propertyPath: m_Mesh
       value: 
