@@ -334,6 +334,7 @@
     <Compile Include="Assets\Scripts\GameObjects\FreezWhenFinPut.cs" />
     <Compile Include="Assets\Scripts\GameObjects\Instantiate_Cube.cs" />
     <Compile Include="Assets\Scripts\GameObjects\putCube.cs" />
+    <Compile Include="Assets\Scripts\GameObjects\QuadTriggerDisabled.cs" />
     <Compile Include="Assets\Scripts\GameObjects\StopRedrawCube.cs" />
     <Compile Include="Assets\Scripts\LabFrameRelease\Config\ApplicationConfig.cs" />
     <Compile Include="Assets\Scripts\LabFrameRelease\Enum\Enum.cs" />

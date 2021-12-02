@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: -9077280975477917458}
   m_Layer: 0
   m_Name: YellowCuboid
-  m_TagString: cuboid
+  m_TagString: cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

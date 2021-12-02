@@ -22,6 +22,7 @@ public class Instantiate_Cube : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //GetComponent<GameObject>().CompareTag("question")
         //玩家可選題目
         int RandomQuestion = 1;
         //int RandomQuestion = Random.Range(1, 4);

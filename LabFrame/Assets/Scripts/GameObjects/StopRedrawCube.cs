@@ -24,15 +24,15 @@ public class StopRedrawCube : MonoBehaviour
             //GetComponent<CubeDisappear>().enabled = false;
             //GetComponent<DragCube>().enabled = false;
             Cube = GameObject.FindGameObjectsWithTag("cube");
-            Cube2 = GameObject.FindGameObjectsWithTag("cube2");
+            /*Cube2 = GameObject.FindGameObjectsWithTag("cube2");
             Cuboid = GameObject.FindGameObjectsWithTag("cuboid");
             Cuboid3 = GameObject.FindGameObjectsWithTag("cuboid3");
-            
+            */
             foreach (GameObject cube in Cube)
             {
                 cube.GetComponent<DragCube>().dragDisabled = false;
             }
-            foreach (GameObject cube in Cube2)
+            /*foreach (GameObject cube in Cube2)
             {
                 cube.GetComponent<DragCube>().dragDisabled = false;
             }
@@ -43,7 +43,7 @@ public class StopRedrawCube : MonoBehaviour
             foreach (GameObject cube in Cuboid3)
             {
                 cube.GetComponent<DragCube>().dragDisabled = false;
-            }
+            }*/
             print(this.name + " stopped");
         }
     }
