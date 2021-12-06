@@ -105,5 +105,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00dd133ca1c0fe24591580e5b03ff26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Quad: {fileID: 0}
-  Cube: {fileID: 0}

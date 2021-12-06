@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7153311190729458172}
   - component: {fileID: -4238120778450222980}
   m_Layer: 0
-  m_Name: Q1Quad9
+  m_Name: BlueCuboid3(Q1Quad9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

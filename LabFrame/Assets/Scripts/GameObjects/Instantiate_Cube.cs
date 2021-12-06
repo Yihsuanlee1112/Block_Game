@@ -16,6 +16,8 @@ public class Instantiate_Cube : MonoBehaviour
     [Header("Cubes")]
     public List<GameObject> Cubes;
     Vector3 position;
+    //public int RandomQuestion = Random.Range(1, 4);
+    public int RandomQuestion = 1;
     //Quaternion rotation ;
     Vector3 Question_position = Vector3.zero;
 
@@ -24,7 +26,7 @@ public class Instantiate_Cube : MonoBehaviour
     {
         //GetComponent<GameObject>().CompareTag("question")
         //玩家可選題目
-        int RandomQuestion = 1;
+        //int RandomQuestion = 1;
         //int RandomQuestion = Random.Range(1, 4);
         if (RandomQuestion == 1)
         {
@@ -67,7 +69,7 @@ public class Instantiate_Cube : MonoBehaviour
         //BlueCuboid3
         position = new Vector3(12, (float)1.5, -4);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[0], position, Quaternion.identity));
-
+       
         //RedCuboid3
         position = new Vector3(12, (float)1.5, (float)-5.5);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[1], position, Quaternion.identity));

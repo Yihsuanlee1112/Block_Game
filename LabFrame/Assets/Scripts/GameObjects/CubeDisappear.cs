@@ -24,7 +24,7 @@ public class CubeDisappear : MonoBehaviour
         //this.transform.position =  new Vector3(12, 2, Random.Range((float)-7.0, (float)7.0));
         this.GetComponent<Animator>().enabled = false;
         this.transform.SetPositionAndRotation(new Vector3(12, 2, Random.Range((float)-7.0, (float)7.0)), Quaternion.Euler(new Vector3(0, 0, 0)));
-        CheckWhichCube();
+        //CheckWhichCube();
         //print("set");
     }
 

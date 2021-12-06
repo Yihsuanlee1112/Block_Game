@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2848002932689057318}
   - component: {fileID: 3712604008482644499}
   m_Layer: 0
-  m_Name: Q1Quad8
+  m_Name: RedCuboid3(Q1Quad8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

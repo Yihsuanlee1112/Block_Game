@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6156163414887143770}
   - component: {fileID: -3177120932487937887}
   m_Layer: 0
-  m_Name: RedCube(Q1Quad4)
+  m_Name: RedCuboid(Q1Quad4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,5 +105,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00dd133ca1c0fe24591580e5b03ff26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Quad: {fileID: 0}
-  Cube: {fileID: 0}
