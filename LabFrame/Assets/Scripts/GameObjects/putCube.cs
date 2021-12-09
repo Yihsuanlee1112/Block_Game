@@ -41,7 +41,7 @@ public class putCube : MonoBehaviour
             Debug.Log(answerCube);
             answerCube.transform.parent = gameObject.transform;
             print(answerCube.transform.parent + " is my father");
-            answerCube.transform.localScale = gameObject.transform.localScale;
+            //answerCube.transform.localScale = gameObject.transform.localScale;
             //print(answerCube.transform.localScale);
             answerCube.transform.rotation = gameObject.transform.rotation;
 
@@ -52,7 +52,7 @@ public class putCube : MonoBehaviour
         {
             answerCube.transform.parent = gameObject.transform;
             print(answerCube.transform.parent + " is my father");
-            answerCube.transform.localScale = gameObject.transform.localScale;
+            //answerCube.transform.localScale = gameObject.transform.localScale;
             //print(gameObject.transform.localScale);
             //print(answerCube.transform.localScale);
             answerCube.transform.rotation = gameObject.transform.rotation;

@@ -14,7 +14,8 @@ public class CheckFormerCube : MonoBehaviour
     private int i;
     public bool CheckQ1Former(Collider Cube)
     {
-        if (Cube is null)
+        /*
+         * if (Cube is null)
         {
             throw new ArgumentNullException(nameof(Cube));
         }
@@ -27,6 +28,7 @@ public class CheckFormerCube : MonoBehaviour
             cubeName = cubeName.Remove(delStr);
         }
         print(cubeName + " is checking");
+        */
         Collider[] Q1Quad = {
             GameObject.Find("RedCube(Q1Quad0)").GetComponent<BoxCollider>(),
             GameObject.Find("BlueCube(Q1Quad1)").GetComponent<BoxCollider>(),
