@@ -6,29 +6,16 @@ using UnityEngine;
 public class CheckFormerCube : MonoBehaviour
 {
     public GameObject checkFormerCube;
+    //public Instantiate_Cube instantiate;
     //[Header("Question Quad")]
     //public List<GameObject> Question1_Quad; 
     //public List<GameObject> Question2_Quad; 
     //public List<GameObject> Question3_Quad; 
     //public List<GameObject> Question4_Quad;
     private int i;
+    private int j;
     public bool CheckQ1Former(Collider Cube)
     {
-        /*
-         * if (Cube is null)
-        {
-            throw new ArgumentNullException(nameof(Cube));
-        }
-        Debug.Log(Cube);//RedCube(Clone)
-
-        string cubeName = Cube.name;
-        int delStr = cubeName.IndexOf("(Clone)");
-        if (delStr >= 0)
-        {
-            cubeName = cubeName.Remove(delStr);
-        }
-        print(cubeName + " is checking");
-        */
         Collider[] Q1Quad = {
             GameObject.Find("RedCube(Q1Quad0)").GetComponent<BoxCollider>(),
             GameObject.Find("BlueCube(Q1Quad1)").GetComponent<BoxCollider>(),
@@ -87,10 +74,9 @@ public class CheckFormerCube : MonoBehaviour
                 print("put former first!!");
                 Cube.GetComponent<Animator>().enabled = true;
                 print("music");
-                //print(Cube.transform.position);
-                //Cube.transform.SetPositionAndRotation(new Vector3(12, 2, UnityEngine.Random.Range((float)-7.0, (float)7.0)), Quaternion.Euler(new Vector3(0, 0, 0)));
-                //print("New" + Cube.transform.position);
+
                 //Cube.GetComponent<Animator>().enabled = false;
+                Cube.transform.SetPositionAndRotation(new Vector3(12, 2, UnityEngine.Random.Range((float)-7.0, (float)7.0)), Quaternion.Euler(new Vector3(0, 0, 0)));
                 flag = false;
                 break;
             }
@@ -98,6 +84,7 @@ public class CheckFormerCube : MonoBehaviour
             {
                 print("try it again");
                 Cube.GetComponent<Animator>().enabled = true;
+                Cube.transform.position = new Vector3(12, 2, UnityEngine.Random.Range((float)-7.0, (float)7.0));
                 print("you can do it");
                 flag = false;
                 break;
