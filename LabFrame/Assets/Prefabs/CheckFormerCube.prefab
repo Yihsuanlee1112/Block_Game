@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7619125615241871164}
   - component: {fileID: 7619125615241871165}
+  - component: {fileID: -8049993904318775289}
   m_Layer: 0
   m_Name: CheckFormerCube
   m_TagString: Untagged
@@ -44,17 +45,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkFormerCube: {fileID: 7619125615241871166}
-  Question1_Quad:
-  - {fileID: 6828273679717910759, guid: 6729d3fcd83a0cf43adc4a6ead1f0dc0, type: 3}
-  - {fileID: 4735902643318365229, guid: 10c267c5142d47d4483b60b560d4948c, type: 3}
-  - {fileID: 3001130128939815589, guid: abfe1d0cbce0db54d93e7a291185bf6b, type: 3}
-  - {fileID: 4598020084315810720, guid: b0559d6b12d82aa498adda960d44e39c, type: 3}
-  - {fileID: 4598020084315810720, guid: b0559d6b12d82aa498adda960d44e39c, type: 3}
-  - {fileID: 8880047699209889395, guid: 50d212d8dca82d04e94ae07ff9b23bf1, type: 3}
-  - {fileID: 8210804808579540126, guid: 3d379c8e661e21e40933d5044c852ea1, type: 3}
-  - {fileID: 1917926944623168816, guid: 83b8f8889202de44a8714394ae80f4dc, type: 3}
-  - {fileID: 2069584043620597023, guid: ca228d42fdb8d534d9b6db8d9e5c80bd, type: 3}
-  - {fileID: 5992644048404628745, guid: 7da0bee902ae65e4b841ab8baeba7a0c, type: 3}
-  Question2_Quad: []
-  Question3_Quad: []
-  Question4_Quad: []
+  animator: {fileID: 0}
+--- !u!95 &-8049993904318775289
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7619125615241871166}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0eeac14b0cac0544eb9e73fd1f514934, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

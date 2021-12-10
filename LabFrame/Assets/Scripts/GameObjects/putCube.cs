@@ -36,7 +36,7 @@ public class putCube : MonoBehaviour
         if (gameObject.name == cubeName)
         {
             print("stick");
-            
+
 
             Debug.Log(answerCube);
             answerCube.transform.parent = gameObject.transform;
@@ -50,7 +50,7 @@ public class putCube : MonoBehaviour
         }
         else if (gameObject.name != cubeName)
         {
-            
+
             answerCube.transform.parent = gameObject.transform;
             print(answerCube.transform.parent + " is my father");
             //answerCube.transform.localScale = gameObject.transform.localScale;
@@ -59,18 +59,18 @@ public class putCube : MonoBehaviour
             answerCube.transform.rotation = gameObject.transform.rotation;
             answerCube.transform.localPosition = new Vector3(0.5f, 0.5f, -0.5f);
             answerCube.transform.parent = null;
-            //answerCube.GetComponent<Rigidbody>().isKinematic = true;
-            //print("this wrong" + answerCube.name + "iskinematic");
-            answerCube.GetComponent<Animator>().enabled = true;
+            answerCube.GetComponent<Animator>().SetBool("isRightcube", false);
+            answerCube.GetComponent<Animator>().SetBool("isWrongcube", true);
             Debug.Log("play animator");
             Debug.Log("transform");
             answerCube.transform.SetPositionAndRotation(new Vector3(12, 2, UnityEngine.Random.Range((float)-7.0, (float)7.0)), Quaternion.Euler(new Vector3(0, 0, 0)));
         }
         //answerCube.transform.SetPositionAndRotation(new Vector3(12, 2, UnityEngine.Random.Range((float)-7.0, (float)7.0)), Quaternion.Euler(new Vector3(0, 0, 0)));
         //Debug.Log(answerCube.transform);
-        //answerCube.GetComponent<Animator>().enabled = false;
+        //answerCube.GetComponent<Animator>().SetBool("isWrongcube", false);
+        //answerCube.GetComponent<Animator>().SetBool("isRightcube", false);
+
     }
 }
-    
 
 

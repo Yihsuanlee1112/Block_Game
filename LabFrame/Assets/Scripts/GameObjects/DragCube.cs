@@ -18,7 +18,6 @@ public class DragCube : MonoBehaviour
         if (!dragDisabled) return;
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
         //print("this " + gameObject.name + "isNOTkinematic");
-        gameObject.GetComponent<Animator>().enabled = false;
         
         //print(this.gameObject.name);
         mZCoord = Camera.main.WorldToScreenPoint(

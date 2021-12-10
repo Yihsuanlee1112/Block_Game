@@ -28,7 +28,7 @@ public class CubeDisappear : MonoBehaviour
         //print("set");
     }
 
-    public void CheckWhichCube()
+/*    public void CheckWhichCube()
     {
         if (this.tag == "cube")
         {
@@ -52,7 +52,7 @@ public class CubeDisappear : MonoBehaviour
             print("cube2");
             this.transform.localScale = new Vector3(1, 1, 1);
         }
-
+*/
     }
     //IEnumerator RespwanCube()
     //{
@@ -65,4 +65,4 @@ public class CubeDisappear : MonoBehaviour
     //    yield return null;
     //}//積木重新生成
 
-}
+

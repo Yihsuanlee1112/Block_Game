@@ -6,16 +6,11 @@ using UnityEngine;
 public class CheckFormerCube : MonoBehaviour
 {
     public GameObject checkFormerCube;
-    //public Instantiate_Cube instantiate;
-    //[Header("Question Quad")]
-    //public List<GameObject> Question1_Quad; 
-    //public List<GameObject> Question2_Quad; 
-    //public List<GameObject> Question3_Quad; 
-    //public List<GameObject> Question4_Quad;
+    //Animator animator;
     private int i;
-    private int j;
     public bool CheckQ1Former(Collider Cube)
     {
+        //animator = GetComponent<Animator>();
         Collider[] Q1Quad = {
             GameObject.Find("RedCube(Q1Quad0)").GetComponent<BoxCollider>(),
             GameObject.Find("BlueCube(Q1Quad1)").GetComponent<BoxCollider>(),
@@ -28,9 +23,6 @@ public class CheckFormerCube : MonoBehaviour
             GameObject.Find("RedCuboid3(Q1Quad8)").GetComponent<BoxCollider>(),
             GameObject.Find("BlueCuboid3(Q1Quad9)").GetComponent<BoxCollider>(),
         };
-
-        //print(Q1Quad[1]);
-        //Debug.Log(Q1Quad[i].name);
 
         bool flag = true;
         Debug.Log("I'm checking");
@@ -54,7 +46,9 @@ public class CheckFormerCube : MonoBehaviour
             {
                 print("good job!!");
                 Cube.GetComponent<Rigidbody>().isKinematic = true;
-                Cube.GetComponent<Animator>().enabled = false;
+                Cube.GetComponent<Animator>().SetBool("isWrongcube", false);
+                Cube.GetComponent<Animator>().SetBool("isRightcube", true);
+                Debug.Log(Cube.GetComponent<Animator>());
                 print("this " + Cube.name + "iskinematic");
                 flag = true;
                 break;
@@ -63,7 +57,9 @@ public class CheckFormerCube : MonoBehaviour
             {
                 print("great job!!");
                 Cube.GetComponent<Rigidbody>().isKinematic = true;
-                Cube.GetComponent<Animator>().enabled = false;
+                Cube.GetComponent<Animator>().SetBool("isWrongcube", false);
+                Cube.GetComponent<Animator>().SetBool("isRightcube", true);
+                
                 print("this " + Cube.name + "iskinematic");
                 flag = true;
                 break;
@@ -72,10 +68,9 @@ public class CheckFormerCube : MonoBehaviour
             {
                 Debug.Log("wrong");
                 print("put former first!!");
-                Cube.GetComponent<Animator>().enabled = true;
+                Cube.GetComponent<Animator>().SetBool("isRightcube", false);
+                Cube.GetComponent<Animator>().SetBool("isWrongcube", true);
                 print("music");
-
-                //Cube.GetComponent<Animator>().enabled = false;
                 Cube.transform.SetPositionAndRotation(new Vector3(12, 2, UnityEngine.Random.Range((float)-7.0, (float)7.0)), Quaternion.Euler(new Vector3(0, 0, 0)));
                 flag = false;
                 break;
@@ -83,13 +78,16 @@ public class CheckFormerCube : MonoBehaviour
             else if (Q1Quad[i].isTrigger == true && Q1Quad[i + 1].isTrigger == true)
             {
                 print("try it again");
-                Cube.GetComponent<Animator>().enabled = true;
+                Cube.GetComponent<Animator>().SetBool("isRightcube", false);
+                Cube.GetComponent<Animator>().SetBool("isWrongcube", true);
                 Cube.transform.position = new Vector3(12, 2, UnityEngine.Random.Range((float)-7.0, (float)7.0));
                 print("you can do it");
                 flag = false;
                 break;
             }
             print("out of while loop");
+            //Cube.GetComponent<Animator>().SetBool("isWrongcube", false);
+            //Cube.GetComponent<Animator>().SetBool("isRightcube", false);
             break;
         }
         return flag;
@@ -98,6 +96,5 @@ public class CheckFormerCube : MonoBehaviour
         //yield return null;
     }
 }
-   
 
 
