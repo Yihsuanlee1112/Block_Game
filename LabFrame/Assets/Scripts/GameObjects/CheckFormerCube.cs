@@ -6,11 +6,20 @@ using UnityEngine;
 public class CheckFormerCube : MonoBehaviour
 {
     public GameObject checkFormerCube;
+    public AudioClip correctSound;
+    public AudioClip wrongSound;
+    public AudioClip clip;
+    AudioSource audioSource;
     //Animator animator;
     private int i;
-    public bool CheckQ1Former(Collider Cube)
+    void Start()
     {
-        //animator = GetComponent<Animator>();
+        
+        audioSource = GetComponent<AudioSource>();
+    }
+    public bool CheckQ1Former(Collider Cube)
+    //public IEnumerator CheckQ1Former(Collider Cube)
+    {
         Collider[] Q1Quad = {
             GameObject.Find("RedCube(Q1Quad0)").GetComponent<BoxCollider>(),
             GameObject.Find("BlueCube(Q1Quad1)").GetComponent<BoxCollider>(),
@@ -45,10 +54,16 @@ public class CheckFormerCube : MonoBehaviour
             if (i == 9)
             {
                 print("good job!!");
+               
+               /* clip = Resources.Load<AudioClip>("AudioClip/correctSound");
+                audioSource.PlayOneShot(clip);*/
+                audioSource.clip = correctSound;
+                audioSource.Play();
+                //GameAudioController.Instance.PlayOneShot(clip);
+                //Cube.GetComponent<Animator>().SetBool("isWrongcube", false);
+                //Cube.GetComponent<Animator>().SetBool("isRightcube", true);
+                Debug.Log(clip);
                 Cube.GetComponent<Rigidbody>().isKinematic = true;
-                Cube.GetComponent<Animator>().SetBool("isWrongcube", false);
-                Cube.GetComponent<Animator>().SetBool("isRightcube", true);
-                Debug.Log(Cube.GetComponent<Animator>());
                 print("this " + Cube.name + "iskinematic");
                 flag = true;
                 break;
@@ -56,10 +71,16 @@ public class CheckFormerCube : MonoBehaviour
             else if (Q1Quad[i].isTrigger == false && Q1Quad[i + 1].isTrigger == false)
             {
                 print("great job!!");
-                Cube.GetComponent<Rigidbody>().isKinematic = true;
-                Cube.GetComponent<Animator>().SetBool("isWrongcube", false);
-                Cube.GetComponent<Animator>().SetBool("isRightcube", true);
                 
+                //clip = Resources.Load<AudioClip>("AudioClip/correctSound");
+                //audioSource.PlayOneShot(clip);
+                audioSource.clip = correctSound;
+                audioSource.Play();
+                Debug.Log(clip);
+                //GameAudioController.Instance.PlayOneShot(clip);
+                // Cube.GetComponent<Animator>().SetBool("isWrongcube", false);
+                // Cube.GetComponent<Animator>().SetBool("isRightcube", true);
+                Cube.GetComponent<Rigidbody>().isKinematic = true;
                 print("this " + Cube.name + "iskinematic");
                 flag = true;
                 break;
@@ -68,8 +89,12 @@ public class CheckFormerCube : MonoBehaviour
             {
                 Debug.Log("wrong");
                 print("put former first!!");
-                Cube.GetComponent<Animator>().SetBool("isRightcube", false);
-                Cube.GetComponent<Animator>().SetBool("isWrongcube", true);
+                clip = Resources.Load<AudioClip>("AudioClip/wrongSound");
+                audioSource.PlayOneShot(clip);
+                Debug.Log(clip);
+                //GameAudioController.Instance.PlayOneShot(clip);
+                //Cube.GetComponent<Animator>().SetBool("isRightcube", false);
+                //Cube.GetComponent<Animator>().SetBool("isWrongcube", true);
                 print("music");
                 Cube.transform.SetPositionAndRotation(new Vector3(12, 2, UnityEngine.Random.Range((float)-7.0, (float)7.0)), Quaternion.Euler(new Vector3(0, 0, 0)));
                 flag = false;
@@ -78,8 +103,12 @@ public class CheckFormerCube : MonoBehaviour
             else if (Q1Quad[i].isTrigger == true && Q1Quad[i + 1].isTrigger == true)
             {
                 print("try it again");
-                Cube.GetComponent<Animator>().SetBool("isRightcube", false);
-                Cube.GetComponent<Animator>().SetBool("isWrongcube", true);
+                clip = Resources.Load<AudioClip>("AudioClip/wrongSound");
+                audioSource.PlayOneShot(clip);
+                Debug.Log(clip);
+                //GameAudioController.Instance.PlayOneShot(clip);
+                //Cube.GetComponent<Animator>().SetBool("isRightcube", false);
+                //Cube.GetComponent<Animator>().SetBool("isWrongcube", true);
                 Cube.transform.position = new Vector3(12, 2, UnityEngine.Random.Range((float)-7.0, (float)7.0));
                 print("you can do it");
                 flag = false;
@@ -93,8 +122,7 @@ public class CheckFormerCube : MonoBehaviour
         return flag;
         //StartCoroutine(ActionOne());
         //StartCoroutine(ActionTwo());
-        //yield return null;
+        //yield return flag;
     }
 }
-
 

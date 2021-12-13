@@ -8,10 +8,12 @@ public class putCube : MonoBehaviour
     public CheckFormerCube checkFormer;
     public Instantiate_Cube instantiate;
 
+    public AudioClip clip;
+    AudioSource myAudioSource;
     // Start is called before the first frame update
     void Start()
     {
-
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,10 +49,10 @@ public class putCube : MonoBehaviour
             answerCube.transform.localPosition = new Vector3(0.5f, 0.5f, -0.5f);//相對於父物件的位置
             answerCube.transform.parent = null;
             if (instantiate.RandomQuestion == 1) { checkFormer.CheckQ1Former(answerCube); }
+            //if (instantiate.RandomQuestion == 1) { StartCoroutine(GetComponent<CheckFormerCube>().CheckQ1Former(answerCube)); }
         }
         else if (gameObject.name != cubeName)
         {
-
             answerCube.transform.parent = gameObject.transform;
             print(answerCube.transform.parent + " is my father");
             //answerCube.transform.localScale = gameObject.transform.localScale;
@@ -59,8 +61,12 @@ public class putCube : MonoBehaviour
             answerCube.transform.rotation = gameObject.transform.rotation;
             answerCube.transform.localPosition = new Vector3(0.5f, 0.5f, -0.5f);
             answerCube.transform.parent = null;
-            answerCube.GetComponent<Animator>().SetBool("isRightcube", false);
-            answerCube.GetComponent<Animator>().SetBool("isWrongcube", true);
+            clip = Resources.Load<AudioClip>("AudioClip/wrongSound");
+            myAudioSource.PlayOneShot(clip);
+            Debug.Log(clip);
+            //GameAudioController.Instance.PlayOneShot(clip);
+            //answerCube.GetComponent<Animator>().SetBool("isRightcube", false);
+            //answerCube.GetComponent<Animator>().SetBool("isWrongcube", true);
             Debug.Log("play animator");
             Debug.Log("transform");
             answerCube.transform.SetPositionAndRotation(new Vector3(12, 2, UnityEngine.Random.Range((float)-7.0, (float)7.0)), Quaternion.Euler(new Vector3(0, 0, 0)));
@@ -72,5 +78,4 @@ public class putCube : MonoBehaviour
 
     }
 }
-
 
