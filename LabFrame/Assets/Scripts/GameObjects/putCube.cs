@@ -16,6 +16,7 @@ public class putCube : MonoBehaviour
     void Start()
     {
         myAudioSource = GetComponent<AudioSource>();
+        checkFormer = FindObjectOfType<CheckFormerCube>();
     }
 
     // Update is called once per frame
@@ -54,7 +55,7 @@ public class putCube : MonoBehaviour
             // 入口
             if (instantiate.RandomQuestion == 1) 
             { 
-                CheckQ1Former(answerCube);
+                checkFormer.CheckQ1Former(answerCube);
             }
             //if (instantiate.RandomQuestion == 1) { StartCoroutine(GetComponent<CheckFormerCube>().CheckQ1Former(answerCube)); }
         }
@@ -80,7 +81,7 @@ public class putCube : MonoBehaviour
         }
 
     }
-    public bool CheckQ1Former(Collider Cube)
+    /*public bool CheckQ1Former(Collider Cube)
     //public IEnumerator CheckQ1Former(Collider Cube)
     {
         Collider[] Q1Quad = {
@@ -148,10 +149,10 @@ public class putCube : MonoBehaviour
                 print("great job!!");
                 clip = Resources.Load<AudioClip>("AudioClip/wrongSound");
                 myAudioSource.PlayOneShot(clip);
-                /*
+                
                 clip = Resources.Load<AudioClip>("AudioClip/wrongSound");
                 audioSource.PlayOneShot(clip);
-                */
+                
                 //audioSource.clip = correctSound;
                 //audioSource.Play();
                 //audioSource.PlayOneShot(correctSound);
@@ -205,6 +206,6 @@ public class putCube : MonoBehaviour
         //StartCoroutine(ActionOne());
         //StartCoroutine(ActionTwo());
         //yield return flag;
-    }
+    }*/
 }
 

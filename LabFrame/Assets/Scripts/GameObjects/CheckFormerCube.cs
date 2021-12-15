@@ -21,7 +21,7 @@ public class CheckFormerCube : MonoBehaviour
 
     void Start()
     {
-        //checkAudioSource = GetComponent<AudioSource>();
+        checkAudioSource = GetComponent<AudioSource>();
         //checkAudioSource = putcube.GetComponent<AudioSource>();
 
         //correctSound = Resources.Load<AudioClip>("AudioClip/correctSound");

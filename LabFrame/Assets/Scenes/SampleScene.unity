@@ -1656,7 +1656,42 @@ PrefabInstance:
     - target: {fileID: 7619125615241871166, guid: 0546406fa1cac3841ae7d959b1d300ba,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
+        type: 3}
+      propertyPath: BypassEffects
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
+        type: 3}
+      propertyPath: BypassListenerEffects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7619125615241871164, guid: 0546406fa1cac3841ae7d959b1d300ba,
         type: 3}
@@ -1758,41 +1793,6 @@ PrefabInstance:
       propertyPath: Sound.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: bdff2156cf9e5a0458c26e697d8dc0c2, type: 3}
-    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
-        type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
-        type: 3}
-      propertyPath: m_Pitch
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
-        type: 3}
-      propertyPath: BypassEffects
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
-        type: 3}
-      propertyPath: BypassListenerEffects
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7971678484528256512, guid: 0546406fa1cac3841ae7d959b1d300ba,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0546406fa1cac3841ae7d959b1d300ba, type: 3}
 --- !u!1 &1878595224 stripped

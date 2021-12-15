@@ -62,7 +62,7 @@ public class Instantiate_Cube : MonoBehaviour
     public void Question_1()
     {
         //生成題目
-        Instantiate(Question_Prefabs[0], Question_position, Quaternion.identity);
+         Instantiate(Question_Prefabs[0], Question_position, Quaternion.identity);
 
         //要生成的物件。
 
