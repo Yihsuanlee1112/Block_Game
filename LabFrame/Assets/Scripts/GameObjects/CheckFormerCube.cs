@@ -3,19 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 確認積木擺放是否正確，播放 correct sound (播放失敗)
 public class CheckFormerCube : MonoBehaviour
 {
-    public GameObject checkFormerCube;
-    public AudioClip correctSound;
-    public AudioClip wrongSound;
-    public AudioClip clip;
-    AudioSource audioSource;
+    // 這行可以拿掉
+    //public GameObject checkFormerCube;
+
+    //public AudioClip correctSound;
+    //public AudioClip wrongSound;
     //Animator animator;
     private int i;
+
+    AudioSource checkAudioSource;
+    AudioClip clip;
+    //putCube putcube;
+    //public AudioClip[] Sound;
+
     void Start()
     {
-        
-        audioSource = GetComponent<AudioSource>();
+        //checkAudioSource = GetComponent<AudioSource>();
+        //checkAudioSource = putcube.GetComponent<AudioSource>();
+
+        //correctSound = Resources.Load<AudioClip>("AudioClip/correctSound");
+        //wrongSound = Resources.Load<AudioClip>("AudioClip/wrongSound");
     }
     public bool CheckQ1Former(Collider Cube)
     //public IEnumerator CheckQ1Former(Collider Cube)
@@ -47,6 +57,7 @@ public class CheckFormerCube : MonoBehaviour
         if (Cube == GameObject.Find("RedCuboid3(Clone)").GetComponent<BoxCollider>()) { i = 8; }
         if (Cube == GameObject.Find("BlueCuboid3(Clone)").GetComponent<BoxCollider>()) { i = 9; }
 
+
         while (true)
         {
             Debug.Log("in while " + Cube);
@@ -54,15 +65,26 @@ public class CheckFormerCube : MonoBehaviour
             if (i == 9)
             {
                 print("good job!!");
-               
-               /* clip = Resources.Load<AudioClip>("AudioClip/correctSound");
-                audioSource.PlayOneShot(clip);*/
-                audioSource.clip = correctSound;
-                audioSource.Play();
+
+                clip = Resources.Load<AudioClip>("AudioClip/correctSound");
+                checkAudioSource.PlayOneShot(clip);
+
+                // 共用 putcube 的 audioSource
+                //putcube.GetComponent<AudioSource>().PlayOneShot(clip);
+
+                // 睿哲
+                //audioSource.clip = correctSound;
+                //audioSource.Play();
+
+                // 框架
                 //GameAudioController.Instance.PlayOneShot(clip);
+
+                // 讓putCube播
+                //flag = true;
+
                 //Cube.GetComponent<Animator>().SetBool("isWrongcube", false);
                 //Cube.GetComponent<Animator>().SetBool("isRightcube", true);
-                Debug.Log(clip);
+                //Debug.Log(clip);
                 Cube.GetComponent<Rigidbody>().isKinematic = true;
                 print("this " + Cube.name + "iskinematic");
                 flag = true;
@@ -71,12 +93,16 @@ public class CheckFormerCube : MonoBehaviour
             else if (Q1Quad[i].isTrigger == false && Q1Quad[i + 1].isTrigger == false)
             {
                 print("great job!!");
-                
-                //clip = Resources.Load<AudioClip>("AudioClip/correctSound");
-                //audioSource.PlayOneShot(clip);
-                audioSource.clip = correctSound;
-                audioSource.Play();
-                Debug.Log(clip);
+                clip = Resources.Load<AudioClip>("AudioClip/correctSound");
+                checkAudioSource.PlayOneShot(clip);
+                /*
+                clip = Resources.Load<AudioClip>("AudioClip/wrongSound");
+                audioSource.PlayOneShot(clip);
+                */
+                //audioSource.clip = correctSound;
+                //audioSource.Play();
+                //audioSource.PlayOneShot(correctSound);
+                //Debug.Log(clip);
                 //GameAudioController.Instance.PlayOneShot(clip);
                 // Cube.GetComponent<Animator>().SetBool("isWrongcube", false);
                 // Cube.GetComponent<Animator>().SetBool("isRightcube", true);
@@ -90,8 +116,9 @@ public class CheckFormerCube : MonoBehaviour
                 Debug.Log("wrong");
                 print("put former first!!");
                 clip = Resources.Load<AudioClip>("AudioClip/wrongSound");
-                audioSource.PlayOneShot(clip);
-                Debug.Log(clip);
+                checkAudioSource.PlayOneShot(clip);
+                //audioSource.PlayOneShot(clip);
+                //Debug.Log(clip);
                 //GameAudioController.Instance.PlayOneShot(clip);
                 //Cube.GetComponent<Animator>().SetBool("isRightcube", false);
                 //Cube.GetComponent<Animator>().SetBool("isWrongcube", true);
@@ -104,8 +131,10 @@ public class CheckFormerCube : MonoBehaviour
             {
                 print("try it again");
                 clip = Resources.Load<AudioClip>("AudioClip/wrongSound");
-                audioSource.PlayOneShot(clip);
-                Debug.Log(clip);
+                checkAudioSource.PlayOneShot(clip);
+               // Debug.Log(clip);
+                //audioSource.PlayOneShot(clip);
+                //Debug.Log(clip);
                 //GameAudioController.Instance.PlayOneShot(clip);
                 //Cube.GetComponent<Animator>().SetBool("isRightcube", false);
                 //Cube.GetComponent<Animator>().SetBool("isWrongcube", true);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Instantiate_Cube : MonoBehaviour
 {
-    public GameObject InstantiateCube; //物件的生成點。
+    //public GameObject InstantiateCube; //物件的生成點。
     [Header("Question Prefabs")]
     //[System.NonSerialized]
     public List<GameObject> Question_Prefabs;
@@ -253,6 +253,10 @@ public class Instantiate_Cube : MonoBehaviour
         //GreenCuboid
         position = new Vector3(12, (float)1.5, -6);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[9], position, Quaternion.identity));
+    }
+    public void RockPaperScissors()
+    {
+
     }
      
 }

@@ -6,9 +6,6 @@ using UnityEngine.UI;
 public class StopRedrawCube : MonoBehaviour
 {
     public GameObject[] Cube;
-    public GameObject[] Cube2;
-    public GameObject[] Cuboid;
-    public GameObject[] Cuboid3;
     public Button myStopButton;
 
     private void Start()
@@ -30,7 +27,7 @@ public class StopRedrawCube : MonoBehaviour
             */
             foreach (GameObject cube in Cube)
             {
-                cube.GetComponent<DragCube>().dragDisabled = false;
+                cube.GetComponent<DragCube>().dragEnabled = false;
             }
             /*foreach (GameObject cube in Cube2)
             {

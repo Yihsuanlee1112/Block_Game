@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkFormerCube: {fileID: 7619125615241871166}
-  correct: {fileID: 8300000, guid: 4fa8bb2de7a3d1c458289e9e2302f9c9, type: 3}
-  wrong: {fileID: 8300000, guid: bdff2156cf9e5a0458c26e697d8dc0c2, type: 3}
+  clip: {fileID: 8300000, guid: 4fa8bb2de7a3d1c458289e9e2302f9c9, type: 3}
 --- !u!95 &-8049993904318775289
 Animator:
   serializedVersion: 3
@@ -78,7 +77,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.18
   m_Pitch: 1
   Loop: 0

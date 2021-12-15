@@ -213,6 +213,7 @@ public class CubeExamination : MonoBehaviour
     public void ClickStopButton()
     {
         myStopButton.interactable = false;
+
         if(myStopButton.interactable == false)
         {
             print("disabled");

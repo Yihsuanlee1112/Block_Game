@@ -1,5 +1,9 @@
 sceneSetups:
 - path: Assets/Scenes/SampleScene.unity
   isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/0910-old/face action/kids-room-1021-03.unity
+  isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -7,7 +7,7 @@ public class DragCube : MonoBehaviour
     private Vector3 mOffset;
     private float mZCoord;
 
-    public bool dragDisabled = true;
+    public bool dragEnabled = true;
 
     void Start()
     {
@@ -15,7 +15,7 @@ public class DragCube : MonoBehaviour
     }
     void OnMouseDown()
     {
-        if (!dragDisabled) return;
+        if (!dragEnabled) return;
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
         //print("this " + gameObject.name + "isNOTkinematic");
         
@@ -42,7 +42,7 @@ public class DragCube : MonoBehaviour
 
     void OnMouseDrag()
     {
-        if (!dragDisabled) return;
+        if (!dragEnabled) return;
 
         transform.position = GetMouseAsWorldPoint() + mOffset;
     }

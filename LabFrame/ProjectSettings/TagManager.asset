@@ -16,6 +16,7 @@ TagManager:
   - cuboid
   - cuboid3
   - cube2
+  - RPS
   layers:
   - Default
   - TransparentFX

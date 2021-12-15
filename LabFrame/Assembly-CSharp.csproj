@@ -327,6 +327,7 @@
     <Compile Include="Assets\LabDataVisualization\ViveEye\ViveSR\Scripts\SRanipal_EyeShapeTableDrawer.cs" />
     <Compile Include="Assets\LabDataVisualization\ViveEye\ViveSR\Scripts\SRWorks_Enums.cs" />
     <Compile Include="Assets\Scripts\GameObjects\CheckFormerCube.cs" />
+    <Compile Include="Assets\Scripts\GameObjects\ChooseRPS.cs" />
     <Compile Include="Assets\Scripts\GameObjects\CubeDisappear.cs" />
     <Compile Include="Assets\Scripts\GameObjects\CubeExamination.cs" />
     <Compile Include="Assets\Scripts\GameObjects\CubeStickToQuestion.cs" />
@@ -335,6 +336,7 @@
     <Compile Include="Assets\Scripts\GameObjects\Instantiate_Cube.cs" />
     <Compile Include="Assets\Scripts\GameObjects\putCube.cs" />
     <Compile Include="Assets\Scripts\GameObjects\QuadTriggerDisabled.cs" />
+    <Compile Include="Assets\Scripts\GameObjects\RockPaperScissors.cs" />
     <Compile Include="Assets\Scripts\GameObjects\StopRedrawCube.cs" />
     <Compile Include="Assets\Scripts\LabFrameRelease\Config\ApplicationConfig.cs" />
     <Compile Include="Assets\Scripts\LabFrameRelease\Enum\Enum.cs" />

@@ -25,7 +25,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.16
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -125,7 +125,6 @@ MonoBehaviour:
     type: 3}
   instantiate: {fileID: 5653061204827785930, guid: 04ac2b0bb78147a4192311c633b87394,
     type: 3}
-  clip: {fileID: 8300000, guid: bdff2156cf9e5a0458c26e697d8dc0c2, type: 3}
 --- !u!65 &4521979462777357689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -151,7 +150,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -251,7 +250,6 @@ MonoBehaviour:
     type: 3}
   instantiate: {fileID: 5653061204827785930, guid: 04ac2b0bb78147a4192311c633b87394,
     type: 3}
-  clip: {fileID: 8300000, guid: bdff2156cf9e5a0458c26e697d8dc0c2, type: 3}
 --- !u!65 &3879548338380854363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -277,7 +275,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -377,7 +375,6 @@ MonoBehaviour:
     type: 3}
   instantiate: {fileID: 5653061204827785930, guid: 04ac2b0bb78147a4192311c633b87394,
     type: 3}
-  clip: {fileID: 8300000, guid: bdff2156cf9e5a0458c26e697d8dc0c2, type: 3}
 --- !u!65 &1215957791715068835
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -403,7 +400,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -503,7 +500,6 @@ MonoBehaviour:
     type: 3}
   instantiate: {fileID: 5653061204827785930, guid: 04ac2b0bb78147a4192311c633b87394,
     type: 3}
-  clip: {fileID: 8300000, guid: bdff2156cf9e5a0458c26e697d8dc0c2, type: 3}
 --- !u!1 &1590974291628660716
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +676,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -780,7 +776,6 @@ MonoBehaviour:
     type: 3}
   instantiate: {fileID: 5653061204827785930, guid: 04ac2b0bb78147a4192311c633b87394,
     type: 3}
-  clip: {fileID: 8300000, guid: bdff2156cf9e5a0458c26e697d8dc0c2, type: 3}
 --- !u!1 &4175913447385957421
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,7 +912,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.34
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1017,7 +1012,6 @@ MonoBehaviour:
     type: 3}
   instantiate: {fileID: 5653061204827785930, guid: 04ac2b0bb78147a4192311c633b87394,
     type: 3}
-  clip: {fileID: 8300000, guid: bdff2156cf9e5a0458c26e697d8dc0c2, type: 3}
 --- !u!65 &1223731457420744874
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1043,7 +1037,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.34
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1143,7 +1137,6 @@ MonoBehaviour:
     type: 3}
   instantiate: {fileID: 5653061204827785930, guid: 04ac2b0bb78147a4192311c633b87394,
     type: 3}
-  clip: {fileID: 8300000, guid: bdff2156cf9e5a0458c26e697d8dc0c2, type: 3}
 --- !u!65 &869013233990088365
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1169,7 +1162,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.34
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1269,7 +1262,6 @@ MonoBehaviour:
     type: 3}
   instantiate: {fileID: 5653061204827785930, guid: 04ac2b0bb78147a4192311c633b87394,
     type: 3}
-  clip: {fileID: 8300000, guid: bdff2156cf9e5a0458c26e697d8dc0c2, type: 3}
 --- !u!65 &6219341499458135456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1295,7 +1287,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1395,7 +1387,6 @@ MonoBehaviour:
     type: 3}
   instantiate: {fileID: 5653061204827785930, guid: 04ac2b0bb78147a4192311c633b87394,
     type: 3}
-  clip: {fileID: 8300000, guid: bdff2156cf9e5a0458c26e697d8dc0c2, type: 3}
 --- !u!65 &5505637121248169910
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1421,7 +1412,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.39
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1521,7 +1512,6 @@ MonoBehaviour:
     type: 3}
   instantiate: {fileID: 5653061204827785930, guid: 04ac2b0bb78147a4192311c633b87394,
     type: 3}
-  clip: {fileID: 8300000, guid: bdff2156cf9e5a0458c26e697d8dc0c2, type: 3}
 --- !u!1001 &38090210475325879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2795,6 +2785,21 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6726856128232726842, guid: ec433a57d64b14a4ea758720ceece781,
+        type: 3}
+      propertyPath: m_SelectedFaces.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726856128232726842, guid: ec433a57d64b14a4ea758720ceece781,
+        type: 3}
+      propertyPath: m_SelectedEdges.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726856128232726842, guid: ec433a57d64b14a4ea758720ceece781,
+        type: 3}
+      propertyPath: m_SelectedVertices.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6556541783124903131, guid: ec433a57d64b14a4ea758720ceece781,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2890,6 +2895,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726856128232726842, guid: ec433a57d64b14a4ea758720ceece781,
+        type: 3}
+      propertyPath: m_SelectedFaces.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726856128232726842, guid: ec433a57d64b14a4ea758720ceece781,
+        type: 3}
+      propertyPath: m_SelectedEdges.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726856128232726842, guid: ec433a57d64b14a4ea758720ceece781,
+        type: 3}
+      propertyPath: m_SelectedVertices.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6556541783124903131, guid: ec433a57d64b14a4ea758720ceece781,
         type: 3}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1356486236602300764}
-  - component: {fileID: 1356486236602300765}
+  - component: {fileID: 3920025658192547247}
   m_Layer: 0
   m_Name: StopRedrawCube
   m_TagString: Untagged
@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356486236602300767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4159672, y: 10.054541, z: 0}
+  m_LocalPosition: {x: 0.74123687, y: 7.2057376, z: -0.9998245}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1356486236602300765
+--- !u!114 &3920025658192547247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,7 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: []
-  Cube2: []
-  Cuboid: []
-  Cuboid3: []
   myStopButton: {fileID: 0}
