@@ -68,45 +68,45 @@ public class RockPaperScissors : MonoBehaviour
         //Scissors
         //Result = Resources.Load<Sprite>("Animation/RockPaperScissors/RockPaperScissors_2");
 
-        position = new Vector3(0, 10, 0);
+        position = new Vector3(0, 9, 0);
         Result = Instantiate(rockPaperScissorsResult[0], position, Quaternion.identity);
         Debug.Log(Result);
 
         
-        position = new Vector3(-5, 10, 0);
+        position = new Vector3(-5, 9, 0);
         Result = Instantiate(rockPaperScissorsResult[0], position, Quaternion.identity);
         Debug.Log(Result);
 
         
-        position = new Vector3(5, 10, 0);
+        position = new Vector3(5, 9, 0);
         Result = Instantiate(rockPaperScissorsResult[0], position, Quaternion.identity);
         Debug.Log(Result);
     }
     public void ShowPaperResult()
     {
-        position = new Vector3(0, 10, 0);
+        position = new Vector3(0, 9, 0);
         Result = Instantiate(rockPaperScissorsResult[1], position, Quaternion.identity);
         Debug.Log(Result);
 
-        position = new Vector3(-5, 10, 0);
+        position = new Vector3(-5, 9, 0);
         Result = Instantiate(rockPaperScissorsResult[1], position, Quaternion.identity);
         Debug.Log(Result);
 
-        position = new Vector3(5, 10, 0);
+        position = new Vector3(5, 9, 0);
         Result = Instantiate(rockPaperScissorsResult[1], position, Quaternion.identity);
         Debug.Log(Result);
     }
      public void ShowScissorsResult()
     {
-        position = new Vector3(0, 10, 0);
+        position = new Vector3(0, 9, 0);
         Result = Instantiate(rockPaperScissorsResult[2], position, Quaternion.identity);
         Debug.Log(Result);
 
-        position = new Vector3(-5, 10, 0);
+        position = new Vector3(-5, 9, 0);
         Result = Instantiate(rockPaperScissorsResult[2], position, Quaternion.identity);
         Debug.Log(Result);
 
-        position = new Vector3(5, 10, 0);
+        position = new Vector3(5, 9, 0);
         Result = Instantiate(rockPaperScissorsResult[2], position, Quaternion.identity);
         Debug.Log(Result);
     }
