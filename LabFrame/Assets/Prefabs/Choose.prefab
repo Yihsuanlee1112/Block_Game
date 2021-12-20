@@ -298,7 +298,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7443553554870710889}
-        m_MethodName: choosePaper
+        m_MethodName: CloseAnimator
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -309,7 +309,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 7443553554870710889}
-        m_MethodName: CloseAnimator
+        m_MethodName: choosePaper
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4772018778389621932, guid: e0adaaf620c7d8e4bbd7a9843d82bb39,
+          type: 3}
+        m_MethodName: ShowScissorsResult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -516,7 +528,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7443553554870710889}
-        m_MethodName: chooseScissors
+        m_MethodName: CloseAnimator
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -527,7 +539,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 7443553554870710889}
-        m_MethodName: CloseAnimator
+        m_MethodName: chooseScissors
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4772018778389621932, guid: e0adaaf620c7d8e4bbd7a9843d82bb39,
+          type: 3}
+        m_MethodName: ShowRockResult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -585,8 +609,6 @@ MonoBehaviour:
   Rock_Button: {fileID: 2410677611058850043}
   Paper_Button: {fileID: 627688472283373364}
   Scissors_Button: {fileID: 4527873988667776687}
-  RPS_Animator: {fileID: 7147374711483716987, guid: e0adaaf620c7d8e4bbd7a9843d82bb39,
-    type: 3}
 --- !u!95 &8448680169373319806
 Animator:
   serializedVersion: 3
@@ -803,7 +825,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7443553554870710889}
-        m_MethodName: chooseRock
+        m_MethodName: CloseAnimator
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -814,7 +836,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 7443553554870710889}
-        m_MethodName: CloseAnimator
+        m_MethodName: chooseRock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4772018778389621932, guid: e0adaaf620c7d8e4bbd7a9843d82bb39,
+          type: 3}
+        m_MethodName: ShowPaperResult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

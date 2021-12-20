@@ -17,7 +17,7 @@ public class Instantiate_Cube : MonoBehaviour
     public List<GameObject> Cubes;
     Vector3 position;
     //public int RandomQuestion = Random.Range(1, 4);
-    public int RandomQuestion = 1;
+    public int RandomQuestion = 2;
     //Quaternion rotation ;
     Vector3 Question_position = Vector3.zero;
 

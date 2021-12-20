@@ -830,6 +830,10 @@ PrefabInstance:
       propertyPath: field of view
       value: 41.409317
       objectReference: {fileID: 0}
+    - target: {fileID: 2014920, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
 --- !u!1 &836871818
@@ -1273,7 +1277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1950602138877448, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4154779130590934, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1483,7 +1487,7 @@ PrefabInstance:
     - target: {fileID: 5738208098700188315, guid: 559c9437765053f4dae86e3a5d9d47f1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5738208098700188311, guid: 559c9437765053f4dae86e3a5d9d47f1,
         type: 3}
@@ -2147,7 +2151,7 @@ PrefabInstance:
     - target: {fileID: 5653061204827785940, guid: 04ac2b0bb78147a4192311c633b87394,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5653061204827785941, guid: 04ac2b0bb78147a4192311c633b87394,
         type: 3}
@@ -2293,6 +2297,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8879883774477111993, guid: bb903bc18dda96341ba1e6a11ec85020,
         type: 3}
+    - target: {fileID: 5653061204827785930, guid: 04ac2b0bb78147a4192311c633b87394,
+        type: 3}
+      propertyPath: RandomQuestion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04ac2b0bb78147a4192311c633b87394, type: 3}
 --- !u!1001 &7755342832885511362
