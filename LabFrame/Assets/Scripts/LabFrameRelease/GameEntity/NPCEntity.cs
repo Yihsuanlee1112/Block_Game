@@ -23,7 +23,7 @@ public class NPCEntity : GameEntityBase
         GameEventCenter.AddEvent("NPCRemind", NPCRemind);
     }
 
-    //時好時壞(?)
+    
     /*
      * public void NPCTalk()
     {

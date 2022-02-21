@@ -16,5 +16,6 @@ public class BlockEntity : GameEntityBase
         _isChose = true;
         gameObject.transform.position = ansTransform.position;
         gameObject.transform.rotation = ansTransform.rotation;
+        Debug.Log(ansTransform.position);
     }
 }

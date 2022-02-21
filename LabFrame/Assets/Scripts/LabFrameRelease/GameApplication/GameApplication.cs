@@ -134,6 +134,7 @@ public class GameApplication : MonoSingleton<GameApplication>
         }
         else
         {
+            //從init scene 跳轉到 MainUI scene
             GameSceneManager.Instance.Change2MainUI();
         }
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Instantiate_Cube : MonoBehaviour
+public class Instantiate_Cube : GameEntityBase
 {
     //public GameObject InstantiateCube; //物件的生成點。
     [Header("Question Prefabs")]
@@ -22,6 +22,11 @@ public class Instantiate_Cube : MonoBehaviour
     //Vector3 Question_position = Vector3.zero;
 
     // Start is called before the first frame update
+
+    public override void EntityDispose()
+    {
+
+    }
     void Start()
     {
         //GetComponent<GameObject>().CompareTag("question")
@@ -48,7 +53,7 @@ public class Instantiate_Cube : MonoBehaviour
             Question_4();
             print("Q4");
         }
-        // position = new Vector3(12, (float)1.5, (float)-7.5);
+        // position = new Vector3((float)0.98, (float)0.36, (float)-7.5);
         //Cubes.Add(Instantiate(Cube_Prefabs[10], position, Quaternion.identity));
         //foreach(GameObject cube in Cubes){
         //    print(this.Cubes+"okok");
@@ -63,196 +68,196 @@ public class Instantiate_Cube : MonoBehaviour
     {
         //生成題目
         Vector3 Question1_position = new Vector3((float)1.345, (float)0.2889, (float)3.9);
-        Instantiate(Question_Prefabs[0], Question1_position, Quaternion.Euler(0, 0, 0));
+        Instantiate(Question_Prefabs[0], Question1_position, Quaternion.Euler(0, 180, 0));
 
         //要生成的物件。
 
         //BlueCuboid3
-        position = new Vector3(12, (float)1.5, -4);
+        position = new Vector3((float)0.98, (float)0.36, (float)3.544);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[0], position, Quaternion.identity));
        
         //RedCuboid3
-        position = new Vector3(12, (float)1.5, (float)-5.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)3.623);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[1], position, Quaternion.identity));
 
         //GreenCuboid3
-        position = new Vector3(12, (float)1.5, -1);
+        position = new Vector3((float)0.98, (float)0.36, (float)3.702);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[2], position, Quaternion.identity));
 
         //YellowCuboid3
-        position = new Vector3(12, (float)1.5, (float)0.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)3.782);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[3], position, Quaternion.identity));
 
         //BlueCuboid
-        position = new Vector3(12, (float)1.5, 2);
+        position = new Vector3((float)0.98, (float)0.36, (float)3.856);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[4], position, Quaternion.identity));
 
         //RedCuboid
         //rotation = Quaternion.Euler(new Vector3(Random.Range(0.0f, 90.0f), Random.Range(0.0f, 90.0f), 0));
-        position = new Vector3(12, (float)1.5, (float)3.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)3.936);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[5], position, Quaternion.identity));
 
         //GreenCuboid
-        position = new Vector3(12, (float)1.5, -7);
+        position = new Vector3((float)0.98, (float)0.36, (float)4.034);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[6], position, Quaternion.identity));
 
         //YellowCuboid
-        position = new Vector3(12, (float)1.5, (float)6.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)4.147);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[7], position, Quaternion.identity));
 
         //BlueCube
-        position = new Vector3(12, (float)1.5, 5);
+        position = new Vector3((float)0.98, (float)0.36, (float)4.225);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[8], position, Quaternion.identity));
 
         //RedCube
-        position = new Vector3(12, (float)1.5, (float)-2.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)4.312);
         Cubes.Add(Instantiate(Q1_Cube_Prefabs[9], position, Quaternion.identity));
     }
     public void Question_2()
     {
         //生成題目
-        Vector3 Question2_position = new Vector3((float)1.345, (float)0.31, (float)3.811);
+        Vector3 Question2_position = new Vector3((float)1.362, (float)0.31, (float)3.811);
         Instantiate(Question_Prefabs[1], Question2_position, Quaternion.Euler(0, -90, 0));
 
         //要生成的物件。
 
         //BlueCuboid3
-        position = new Vector3(12, (float)1.5, 6);
+        position = new Vector3((float)0.98, (float)0.36, 6);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[0], position, Quaternion.identity));
 
         //GreenCuboid
-        position = new Vector3(12, (float)1.5, (float)4.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)4.5);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[1], position, Quaternion.identity));
 
         //BlueCuboid3
-        position = new Vector3(12, (float)1.5, 3);
+        position = new Vector3((float)0.98, (float)0.36, 3);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[2], position, Quaternion.identity));
 
         //RedCuboid
-        position = new Vector3(12, (float)1.5, (float) 1.5);
+        position = new Vector3((float)0.98, (float)0.36, (float) 0.36);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[3], position, Quaternion.identity));
 
         //YellowCube
-        position = new Vector3(12, (float)1.5, (float)0.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)0.5);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[4], position, Quaternion.identity));
 
         //GreenCuboid
         //rotation = Quaternion.Euler(new Vector3(Random.Range(0.0f, 90.0f), Random.Range(0.0f, 90.0f), 0));
-        position = new Vector3(12, (float)1.5, (float)-0.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)-0.5);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[5], position, Quaternion.identity));
 
         //BlueCuboid
-        position = new Vector3(12, (float)1.5, (float)-1.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)-0.36);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[6], position, Quaternion.identity));
 
         //RedCube2
-        position = new Vector3(12, (float)1.5, -3);
+        position = new Vector3((float)0.98, (float)0.36, -3);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[7], position, Quaternion.identity));
 
         //YellowCube
-        position = new Vector3(12, (float)1.5, (float)-4.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)-4.5);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[8], position, Quaternion.identity));
 
         //RedCuboid
-        position = new Vector3(12, (float)1.5, -6);
+        position = new Vector3((float)0.98, (float)0.36, -6);
         Cubes.Add(Instantiate(Q2_Cube_Prefabs[9], position, Quaternion.identity));
     }
     public void Question_3()
     {
         //生成題目
-        Vector3 Question3_position = new Vector3((float)1.5, (float)0.2889, (float)4.1);
+        Vector3 Question3_position = new Vector3((float)0.36, (float)0.2889, (float)4.1);
         Instantiate(Question_Prefabs[2], Question3_position, Quaternion.Euler(0, 180, 0));
 
         //要生成的物件。
 
         //BlueCuboid
-        position = new Vector3(12, (float)1.5, 6);
+        position = new Vector3((float)0.98, (float)0.36, 6);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[0], position, Quaternion.identity));
 
         //GreenCube
-        position = new Vector3(12, (float)1.5, (float)4.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)4.5);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[1], position, Quaternion.identity));
 
         //RedCuboid
-        position = new Vector3(12, (float)1.5, 3);
+        position = new Vector3((float)0.98, (float)0.36, 3);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[2], position, Quaternion.identity));
 
         //BlueCuboid
-        position = new Vector3(12, (float)1.5, (float) 1.5);
+        position = new Vector3((float)0.98, (float)0.36, (float) 0.36);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[3], position, Quaternion.identity));
 
         //GreenCube
-        position = new Vector3(12, (float)1.5, (float)0.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)0.5);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[4], position, Quaternion.identity));
 
         //BlueCuboid
         //rotation = Quaternion.Euler(new Vector3(Random.Range(0.0f, 90.0f), Random.Range(0.0f, 90.0f), 0));
-        position = new Vector3(12, (float)1.5, (float)-0.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)-0.5);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[5], position, Quaternion.identity));
 
         //YellowCuboid3
-        position = new Vector3(12, (float)1.5, (float)-1.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)-0.36);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[6], position, Quaternion.identity));
 
         //GreenCube
-        position = new Vector3(12, (float)1.5, -3);
+        position = new Vector3((float)0.98, (float)0.36, -3);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[7], position, Quaternion.identity));
 
         //BlueCuboid
-        position = new Vector3(12, (float)1.5, (float)-4.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)-4.5);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[8], position, Quaternion.identity));
 
         //RedCuboid
-        position = new Vector3(12, (float)1.5, -6);
+        position = new Vector3((float)0.98, (float)0.36, -6);
         Cubes.Add(Instantiate(Q3_Cube_Prefabs[9], position, Quaternion.identity));
     }
     public void Question_4()
     {
         //生成題目
-        Vector3 Question3_position = new Vector3((float)1.373, (float)0.2889, (float)3.75);
+        Vector3 Question3_position = new Vector3((float)1.38, (float)0.2889, (float)3.75);
         Instantiate(Question_Prefabs[3], Question3_position, Quaternion.Euler(0, 180, 0));
 
         //要生成的物件。
 
         //GreenCuboid
-        position = new Vector3(12, (float)1.5, 6);
+        position = new Vector3((float)0.98, (float)0.36, 6);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[0], position, Quaternion.identity));
 
         //RedCuboid
-        position = new Vector3(12, (float)1.5, (float)4.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)4.5);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[1], position, Quaternion.identity));
 
         //YellowCube
-        position = new Vector3(12, (float)1.5, 3);
+        position = new Vector3((float)0.98, (float)0.36, 3);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[2], position, Quaternion.identity));
 
         //BlueCuboid
-        position = new Vector3(12, (float)1.5, (float) 1.5);
+        position = new Vector3((float)0.98, (float)0.36, (float) 0.36);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[3], position, Quaternion.identity));
 
         //RedCuboid
-        position = new Vector3(12, (float)1.5, (float)0.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)0.5);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[4], position, Quaternion.identity));
 
         //YellowCuboid
         //rotation = Quaternion.Euler(new Vector3(Random.Range(0.0f, 90.0f), Random.Range(0.0f, 90.0f), 0));
-        position = new Vector3(12, (float)1.5, (float)-0.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)-0.5);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[5], position, Quaternion.identity));
 
         //RedCuboid
-        position = new Vector3(12, (float)1.5, (float)-1.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)-0.36);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[6], position, Quaternion.identity));
 
         //BlueCuboid
-        position = new Vector3(12, (float)1.5, -3);
+        position = new Vector3((float)0.98, (float)0.36, -3);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[7], position, Quaternion.identity));
 
         //YellowCuboid
-        position = new Vector3(12, (float)1.5, (float)-4.5);
+        position = new Vector3((float)0.98, (float)0.36, (float)-4.5);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[8], position, Quaternion.identity));
 
         //GreenCuboid
-        position = new Vector3(12, (float)1.5, -6);
+        position = new Vector3((float)0.98, (float)0.36, -6);
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[9], position, Quaternion.identity));
     }
     public void RockPaperScissors()

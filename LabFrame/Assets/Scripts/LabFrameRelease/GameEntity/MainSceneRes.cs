@@ -6,15 +6,19 @@ public class MainSceneRes : GameSceneEntityRes
 {
     public PlayerEntity player;
     public GameObject NPCHand;
-    public List<BlockEntity> puzzle;
-    public NPCEntity nurse;
-    public Animator NPCanimator;
-    public GameObject vrCamera;
-    public Canvas MainSceneUI;
+    public List<BlockEntity> Q1_cube;
+    public List<BlockEntity> Q2_cube;
+    public List<BlockEntity> Q3_cube;
+    public List<BlockEntity> Q4_cube;
+    public NPCEntity npc;
+    public Animator NPC_animator;
+    public Instantiate_Cube Instantiate_Cube;
     public CameraEntity eyeCamera;
-    //public RecognizerEntity recognizerEntity;
     public List<AudioClip> speechClip;
-    public List<GameObject> ObjectList;
+    //public RecognizerEntity recognizerEntity;
+    //public List<GameObject> ObjectList;
     public Transform PutPosition;
     //public List<TimerEntity> TimerList;
+    public GameObject vrCamera;
+    //public Canvas MainSceneUI;
 }

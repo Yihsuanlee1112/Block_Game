@@ -8,7 +8,8 @@ public class TaskFanctory
     {
         var temptasks = new List<TaskBase>
         {
-
+            // 新增GameTask
+            new BLockGameTask(),
         };
         return temptasks;
     }

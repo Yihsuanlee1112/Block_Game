@@ -21,6 +21,7 @@ public class VRIKInput
         float userHeight = 1.5f;
         var npcHeight = (userHeight / npc);
         player.gameObject.transform.localScale = new Vector3(npcHeight, npcHeight, npcHeight);
+        //生成
         var _camera = GameObject.Instantiate(VRCamera);
         GetIKTransform(_camera.transform);
         ik = player.AddComponent<VRIK>();

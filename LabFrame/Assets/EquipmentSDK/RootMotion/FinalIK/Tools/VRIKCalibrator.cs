@@ -160,15 +160,15 @@ namespace RootMotion.FinalIK
             ik.references.root.rotation = Quaternion.LookRotation(headForward);
 
             // Head
-            Transform headTarget = ik.solver.spine.headTarget == null ? (new GameObject("Head Target")).transform : ik.solver.spine.headTarget;
-            headTarget.position = headPos;
-            headTarget.rotation = ik.references.head.rotation;
-            headTarget.parent = headTracker;
-            ik.solver.spine.headTarget = headTarget;
+            //Transform headTarget = ik.solver.spine.headTarget == null ? (new GameObject("Head Target")).transform : ik.solver.spine.headTarget;
+            //headTarget.position = headPos;
+            //headTarget.rotation = ik.references.head.rotation;
+            //headTarget.parent = headTracker;
+            ik.solver.spine.headTarget = headTracker;
 
             // Size
-            float sizeF = (headTarget.position.y - ik.references.root.position.y) / (ik.references.head.position.y - ik.references.root.position.y);
-            ik.references.root.localScale *= sizeF * settings.scaleMlp;
+            //float sizeF = (headTarget.position.y - ik.references.root.position.y) / (ik.references.head.position.y - ik.references.root.position.y);
+            //ik.references.root.localScale *= sizeF * settings.scaleMlp;
 
             // Body
             if (bodyTracker != null)
@@ -193,12 +193,12 @@ namespace RootMotion.FinalIK
             // Left Hand
             if (leftHandTracker != null)
             {
-                Transform leftHandTarget = ik.solver.leftArm.target == null ? (new GameObject("Left Hand Target")).transform : ik.solver.leftArm.target;
-                leftHandTarget.position = leftHandTracker.position + leftHandTracker.rotation * Quaternion.LookRotation(settings.handTrackerForward, settings.handTrackerUp) * settings.handOffset;
-                Vector3 leftHandUp = Vector3.Cross(ik.solver.leftArm.wristToPalmAxis, ik.solver.leftArm.palmToThumbAxis);
-                leftHandTarget.rotation = QuaTools.MatchRotation(leftHandTracker.rotation * Quaternion.LookRotation(settings.handTrackerForward, settings.handTrackerUp), settings.handTrackerForward, settings.handTrackerUp, ik.solver.leftArm.wristToPalmAxis, leftHandUp);
-                leftHandTarget.parent = leftHandTracker;
-                ik.solver.leftArm.target = leftHandTarget;
+                //Transform leftHandTarget = ik.solver.leftArm.target == null ? (new GameObject("Left Hand Target")).transform : ik.solver.leftArm.target;
+                //leftHandTarget.position = leftHandTracker.position + leftHandTracker.rotation * Quaternion.LookRotation(settings.handTrackerForward, settings.handTrackerUp) * settings.handOffset;
+                //Vector3 leftHandUp = Vector3.Cross(ik.solver.leftArm.wristToPalmAxis, ik.solver.leftArm.palmToThumbAxis);
+                //leftHandTarget.rotation = QuaTools.MatchRotation(leftHandTracker.rotation * Quaternion.LookRotation(settings.handTrackerForward, settings.handTrackerUp), settings.handTrackerForward, settings.handTrackerUp, ik.solver.leftArm.wristToPalmAxis, leftHandUp);
+                //leftHandTarget.parent = leftHandTracker;
+                ik.solver.leftArm.target = leftHandTracker;
                 ik.solver.leftArm.positionWeight = 1f;
                 ik.solver.leftArm.rotationWeight = 1f;
             }
@@ -211,12 +211,12 @@ namespace RootMotion.FinalIK
             // Right Hand
             if (rightHandTracker != null)
             {
-                Transform rightHandTarget = ik.solver.rightArm.target == null ? (new GameObject("Right Hand Target")).transform : ik.solver.rightArm.target;
-                rightHandTarget.position = rightHandTracker.position + rightHandTracker.rotation * Quaternion.LookRotation(settings.handTrackerForward, settings.handTrackerUp) * settings.handOffset;
-                Vector3 rightHandUp = -Vector3.Cross(ik.solver.rightArm.wristToPalmAxis, ik.solver.rightArm.palmToThumbAxis);
-                rightHandTarget.rotation = QuaTools.MatchRotation(rightHandTracker.rotation * Quaternion.LookRotation(settings.handTrackerForward, settings.handTrackerUp), settings.handTrackerForward, settings.handTrackerUp, ik.solver.rightArm.wristToPalmAxis, rightHandUp);
-                rightHandTarget.parent = rightHandTracker;
-                ik.solver.rightArm.target = rightHandTarget;
+                //Transform rightHandTarget = ik.solver.rightArm.target == null ? (new GameObject("Right Hand Target")).transform : ik.solver.rightArm.target;
+                //rightHandTarget.position = rightHandTracker.position + rightHandTracker.rotation * Quaternion.LookRotation(settings.handTrackerForward, settings.handTrackerUp) * settings.handOffset;
+                //Vector3 rightHandUp = -Vector3.Cross(ik.solver.rightArm.wristToPalmAxis, ik.solver.rightArm.palmToThumbAxis);
+                //rightHandTarget.rotation = QuaTools.MatchRotation(rightHandTracker.rotation * Quaternion.LookRotation(settings.handTrackerForward, settings.handTrackerUp), settings.handTrackerForward, settings.handTrackerUp, ik.solver.rightArm.wristToPalmAxis, rightHandUp);
+                //rightHandTarget.parent = rightHandTracker;
+                ik.solver.rightArm.target = rightHandTracker;
                 ik.solver.rightArm.positionWeight = 1f;
                 ik.solver.rightArm.rotationWeight = 1f;
             }
@@ -258,7 +258,7 @@ namespace RootMotion.FinalIK
             data.rightFoot = new CalibrationData.Target(ik.solver.rightLeg.target);
             data.leftLegGoal = new CalibrationData.Target(ik.solver.leftLeg.bendGoal);
             data.rightLegGoal = new CalibrationData.Target(ik.solver.rightLeg.bendGoal);
-            data.pelvisTargetRight = rootController.pelvisTargetRight;
+            //data.pelvisTargetRight = rootController.pelvisTargetRight;
             data.pelvisPositionWeight = ik.solver.spine.pelvisPositionWeight;
             data.pelvisRotationWeight = ik.solver.spine.pelvisRotationWeight;
 

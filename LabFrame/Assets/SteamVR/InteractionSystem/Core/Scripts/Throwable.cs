@@ -63,7 +63,6 @@ namespace Valve.VR.InteractionSystem
 
 
         //-------------------------------------------------
-        
         protected virtual void Awake()
 		{
 			velocityEstimator = GetComponent<VelocityEstimator>();

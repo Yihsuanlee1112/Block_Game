@@ -17,6 +17,10 @@ TagManager:
   - cuboid3
   - cube2
   - RPS
+  - projectile
+  - FxTemporaire
+  - QuestionArea
+  - q
   layers:
   - Default
   - TransparentFX
@@ -26,7 +30,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Eye
   - 
   - 
   - 

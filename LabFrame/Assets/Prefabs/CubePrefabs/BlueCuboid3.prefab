@@ -18,12 +18,13 @@ GameObject:
   - component: {fileID: 3644225979342793000}
   - component: {fileID: 2043951979634975860}
   - component: {fileID: -485872159350300626}
+  - component: {fileID: 2256854677573603236}
   m_Layer: 0
   m_Name: BlueCuboid3
   m_TagString: cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7514614011664070908
 Transform:
@@ -34,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 7514614011664070911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.057065994, y: 0.52, z: -4.48}
-  m_LocalScale: {x: 3, y: 1, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -112,7 +113,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!114 &7514614011664070909
 MonoBehaviour:
@@ -121,12 +122,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7514614011664070911}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44f7b9dd6c603fb4b97b7322ac6c2a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragDisabled: 1
+  dragEnabled: 1
 --- !u!114 &7955878384217247778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +148,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7514614011664070911}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
   m_Name: 
@@ -254,7 +255,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7514614011664070911}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 0eeac14b0cac0544eb9e73fd1f514934, type: 2}
   m_CullingMode: 0
@@ -265,3 +266,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2256854677573603236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514614011664070911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bcba22280ddea846b9fb05507c7ec9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Describe: 
+  _isChose: 0
+  ansTransform: {fileID: 0}

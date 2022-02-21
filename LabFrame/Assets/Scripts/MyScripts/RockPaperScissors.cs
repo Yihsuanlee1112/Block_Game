@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class RockPaperScissors : MonoBehaviour
 {
     Vector3 position;
+    Vector3 pos;
     //Sprite Result;
     GameObject Result;
     //Button myRPSButton;
@@ -45,8 +46,9 @@ public class RockPaperScissors : MonoBehaviour
 
         //choose
         position = new Vector3(0, 5, 0);
+        pos = rockPaperScissors[5].transform.position;
         //RPS.Add(Instantiate(rockPaperScissors[3], position, Quaternion.identity));
-        Instantiate(rockPaperScissors[5], position, Quaternion.identity);
+        Instantiate(rockPaperScissors[5], pos, Quaternion.identity);
         //RPS_Animator = Resources.Load<Animator>("Animation/RockPaperScissors");
         RPS_Animator.SetTrigger("RPS");
         Debug.Log(RPS_Animator);
@@ -64,8 +66,9 @@ public class RockPaperScissors : MonoBehaviour
 
         //choose
         position = new Vector3(0, 5, 0);
+        pos = rockPaperScissors[4].transform.position;
         //RPS.Add(Instantiate(rockPaperScissors[0], position, Quaternion.identity));
-        Instantiate(rockPaperScissors[4], position, Quaternion.identity);
+        Instantiate(rockPaperScissors[4], pos, Quaternion.identity);
     }
     public void FourPlayerShowRockResult()
     {
