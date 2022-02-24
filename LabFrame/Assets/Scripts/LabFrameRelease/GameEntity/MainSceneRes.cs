@@ -10,6 +10,7 @@ public class MainSceneRes : GameSceneEntityRes
     public List<BlockEntity> Q2_cube;
     public List<BlockEntity> Q3_cube;
     public List<BlockEntity> Q4_cube;
+    public List<BlockEntity> Cubes;
     public NPCEntity npc;
     public Animator NPC_animator;
     public Instantiate_Cube Instantiate_Cube;
@@ -21,4 +22,6 @@ public class MainSceneRes : GameSceneEntityRes
     //public List<TimerEntity> TimerList;
     public GameObject vrCamera;
     //public Canvas MainSceneUI;
+
+    
 }

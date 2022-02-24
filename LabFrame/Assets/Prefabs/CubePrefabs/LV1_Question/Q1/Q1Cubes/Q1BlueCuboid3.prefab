@@ -33,7 +33,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7514614011664070911}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.057065994, y: 0.52, z: -4.48}
   m_LocalScale: {x: 0.15, y: 0.05, z: 0.05}
   m_Children: []
@@ -113,7 +113,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &7514614011664070909
 MonoBehaviour:
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activateActionSetOnAttach:
     actionSetPath: 
-  hideHandOnAttach: 1
+  hideHandOnAttach: 0
   hideSkeletonOnAttach: 0
   hideControllerOnAttach: 0
   handAnimationOnPickup: 0
@@ -280,5 +280,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Describe: 
   _isChose: 0
-  ansTransform: {fileID: 2428388421009628874, guid: f379824428938a645b7bcb54a107b890,
-    type: 3}
+  ansTransform: {fileID: 0}

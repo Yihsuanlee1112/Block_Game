@@ -24,16 +24,17 @@ public class NPCEntity : GameEntityBase
     }
 
     
-    /*
-     * public void NPCTalk()
+    //public void NPCTalk()
+    //{
+    //    Debug.Log("講話!");
+    //    SpVoice npcsay = new SpVoice();
+    //    npcsay.Speak(GameDataManager.FlowData.UserName, SpeechVoiceSpeakFlags.SVSFlagsAsync);
+    //}
+    
+    public void NPCTakeObject(GameObject gameObject)//拼圖遊戲拿櫃子上的東西
     {
-        Debug.Log("講話!");
-        SpVoice npcsay = new SpVoice();
-        npcsay.Speak(GameDataManager.FlowData.UserName, SpeechVoiceSpeakFlags.SVSFlagsAsync);
-    }
-    */
-    public void NPCTakeObject(GameObject gameObject)
-    {
+        Debug.Log("NPC touch block");
+        Debug.Log(gameObject.name);
         gameObject.transform.position = npchand.transform.position;
         gameObject.transform.parent = null;
         gameObject.transform.SetParent(npchand.transform);
@@ -42,6 +43,7 @@ public class NPCEntity : GameEntityBase
 
     public void NPCPutObject(Transform puttransform)
     {
+        Debug.Log("NPC put block");
         ObjectTaked.transform.parent = null;
         ObjectTaked.transform.position = puttransform.position;
         ObjectTaked = null;
@@ -52,6 +54,7 @@ public class NPCEntity : GameEntityBase
         Remindcount++;
         BLockGameTask._npcremind = true;
         animator.Play("Talk");
-        GameAudioController.Instance.PlayOneShot(speechList[6]);
+        GameAudioController.Instance.PlayOneShot(speechList[3]);//NPC_Remind
+        
     }
 }

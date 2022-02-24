@@ -340,7 +340,6 @@ Transform:
   - {fileID: 415400829563148261}
   - {fileID: 415400829563148257}
   - {fileID: 415400829563148285}
-  - {fileID: 415400829764692876}
   m_Father: {fileID: 415400829563148283}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -434,6 +433,7 @@ Transform:
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_Children:
   - {fileID: 415400829563148277}
+  - {fileID: 415400829764692876}
   m_Father: {fileID: 415400829563148275}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -995,7 +995,7 @@ MonoBehaviour:
   Describe: 
   animator: {fileID: 0}
   speechList: []
-  npchand: {fileID: 0}
+  npchand: {fileID: 415400829764692877}
 --- !u!1 &415400829563177901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,10 +1580,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415400829764692877}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.038, y: -0.0073, z: 0.0002}
+  m_LocalRotation: {x: 0.08980351, y: 0.24506448, z: 0.20876381, w: 0.94249475}
+  m_LocalPosition: {x: -0.14121008, y: -0.023185622, z: 0.014319055}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 415400829563148277}
-  m_RootOrder: 3
+  m_Father: {fileID: 415400829563148283}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

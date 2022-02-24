@@ -20,11 +20,16 @@ public class BLockGameTask : TaskBase
     */
     private PlayerEntity player;
     private NPCEntity npc;
-    private List<BlockEntity> Q1_cube, Q2_cube, Q3_cube, Q4_cube;
+    private List<BlockEntity> Q1_cube;
+    private List<BlockEntity> Q2_cube;
+    private List<BlockEntity> Q3_cube;
+    private List<BlockEntity> Q4_cube;
+    private List<BlockEntity> Cubes;
     private List<GameObject> objectlist;
     private CameraEntity eyecamera;
     private Canvas mainSceneUI;
     private Instantiate_Cube instantiate_Cube;
+    private HandsTrigger PlayerHand;
     //private RecognizerEntity recognizerEntity;
     private string focusName;
     public static bool _playerRound = true;//原本是false
@@ -35,16 +40,18 @@ public class BLockGameTask : TaskBase
     public static bool _eyetimerfinish = false;
     public static bool _waitforwatch = false;
     public static int answerindex = 0;
-    public int TalkScore = 0;
+    public int TalkScore = 0;//recognizerEntity
 
     public override IEnumerator TaskInit()
     {
         GameEventCenter.AddEvent("CheckCube", CheckCube);
-        GameEventCenter.AddEvent<BlockEntity>("CubekAns", CubeAns);
+        GameEventCenter.AddEvent<BlockEntity>("CubeAns", CubeAns);
         GameEventCenter.AddEvent<string>("GetFocusName", GetFocusName);
+        GameEventCenter.AddEvent("AddCubesToList", AddCubesToList);
+        //GameEventCenter.AddEvent<Collider>("CheckIfRightCube", CheckIfRightCube);
 
         //載入MainSceneRes
-        
+
         player = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().player;
         npc = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().npc;
         instantiate_Cube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Instantiate_Cube;
@@ -52,12 +59,14 @@ public class BLockGameTask : TaskBase
         Q2_cube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Q2_cube;
         Q3_cube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Q3_cube;
         Q4_cube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Q4_cube;
+        Cubes = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Cubes;
         //objectlist = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().ObjectList;
         npc.npchand = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().NPCHand;
         npc.speechList = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().speechClip;
         npc.animator = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().NPC_animator;
         //mainSceneUI = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().MainSceneUI;
         //recognizerEntity = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().recognizerEntity;
+
 
         //VRIK初始化
         player.Init(GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().vrCamera);
@@ -95,6 +104,14 @@ public class BLockGameTask : TaskBase
         //yield return SayHello();
         //Debug.Log("打完招呼");
 
+        //規則說明要輪流拼
+        //npc.animator.Play("Talk");
+        npc.animator.SetBool("isTalk2", true);
+        GameAudioController.Instance.PlayOneShot(npc.speechList[5]);//NPC_Rule
+        yield return new WaitForSeconds(8.5f);
+        npc.animator.SetBool("isTalk2", false);
+        GameEventCenter.DispatchEvent("AddCubesToList");
+
         while (!_BlockFinished)
         {
             if (_playerRound)  //玩家回合
@@ -104,57 +121,59 @@ public class BLockGameTask : TaskBase
             else  //NPC回合
             {
                 _npcremind = false;
-                foreach (BlockEntity item in Q1_cube)
+                foreach (BlockEntity cube in Q1_cube)
                 {
-                    if (!item._isChose)
+                    Debug.Log("NPC touch block");
+                    if (!cube._isChose)
                     {
-                        npc.animator.Play("Cube"); //npc拿積木
-                        yield return new WaitForSeconds(8);
+                        Debug.Log("NPC touch block");
+                        npc.animator.Play("Puzzle"); //npc拿積木
+                        yield return new WaitForSeconds(7);
                         if (!_npcremind)
                         {
-                            GameEventCenter.DispatchEvent("cubekAns", item);
+                            GameEventCenter.DispatchEvent("CubeAns", cube);
                             _playerRound = true;
                         }
                         break;
                     }
                 }
-                foreach (BlockEntity item in Q2_cube)
+                foreach (BlockEntity cube in Q2_cube)
                 {
-                    if (!item._isChose)
+                    if (!cube._isChose)
                     {
-                        npc.animator.Play("Cube"); //npc拿積木
+                        npc.animator.Play("Puzzle"); //npc拿積木
                         yield return new WaitForSeconds(8);
                         if (!_npcremind)
                         {
-                            GameEventCenter.DispatchEvent("cubekAns", item);
+                            GameEventCenter.DispatchEvent("CubeAns", cube);
                             _playerRound = true;
                         }
                         break;
                     }
                 }
-                foreach (BlockEntity item in Q3_cube)
+                foreach (BlockEntity cube in Q3_cube)
                 {
-                    if (!item._isChose)
+                    if (!cube._isChose)
                     {
-                        npc.animator.Play("Cube"); //npc拿積木
+                        npc.animator.Play("Puzzle"); //npc拿積木
                         yield return new WaitForSeconds(8);
                         if (!_npcremind)
                         {
-                            GameEventCenter.DispatchEvent("cubekAns", item);
+                            GameEventCenter.DispatchEvent("CubeAns", cube);
                             _playerRound = true;
                         }
                         break;
                     }
                 }
-                foreach (BlockEntity item in Q4_cube)
+                foreach (BlockEntity cube in Q4_cube)
                 {
-                    if (!item._isChose)
+                    if (!cube._isChose)
                     {
-                        npc.animator.Play("Cube"); //npc拿積木
+                        npc.animator.Play("Puzzle"); //npc拿積木
                         yield return new WaitForSeconds(8);
                         if (!_npcremind)
                         {
-                            GameEventCenter.DispatchEvent("cubekAns", item);
+                            GameEventCenter.DispatchEvent("CubeAns", cube);
                             _playerRound = true;
                         }
                         break;
@@ -173,6 +192,38 @@ public class BLockGameTask : TaskBase
         yield return null;
     }
 
+    public void AddCubesToList()
+    {
+        Debug.Log("find!!!");
+        Q1_cube.Add(GameObject.Find("Q1BlueCuboid3(Clone)").GetComponent<BlockEntity>());
+        Q1_cube.Add(GameObject.Find("Q1RedCuboid3(Clone)").GetComponent<BlockEntity>());
+        Q1_cube.Add(GameObject.Find("Q1GreenCuboid3(Clone)").GetComponent<BlockEntity>());
+        Q1_cube.Add(GameObject.Find("Q1YellowCuboid3(Clone)").GetComponent<BlockEntity>());
+        Q1_cube.Add(GameObject.Find("Q1BlueCuboid(Clone)").GetComponent<BlockEntity>());
+        Q1_cube.Add(GameObject.Find("Q1RedCuboid(Clone)").GetComponent<BlockEntity>());
+        Q1_cube.Add(GameObject.Find("Q1GreenCuboid(Clone)").GetComponent<BlockEntity>());
+        Q1_cube.Add(GameObject.Find("Q1YellowCuboid(Clone)").GetComponent<BlockEntity>());
+        Q1_cube.Add(GameObject.Find("Q1BlueCube(Clone)").GetComponent<BlockEntity>());
+        Q1_cube.Add(GameObject.Find("Q1RedCube(Clone)").GetComponent<BlockEntity>());
+        Cubes.AddRange(Q1_cube);
+        foreach (BlockEntity cube in Cubes)
+        {
+            Debug.Log(cube);
+        }
+        //Cubes.AddRange(Q1_cube);
+        //Cubes.Clear();
+
+        //    foreach (BlockEntity cube in Q1_cube)
+
+        //{
+        //    Debug.Log("find and put to Cubes!!!");
+
+        //    Cubes.Add(cube);
+        //    Debug.Log(Q1_cube[i]);
+        //}
+        //}
+
+    }
     /*public void Instantiate_Cube()
     {
         if (RandomQuestion == 1)
@@ -395,9 +446,13 @@ public class BLockGameTask : TaskBase
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[9], position, Quaternion.identity));
     }
     */
+    //public void CheckIfRightCube(Collider Cube)
+    //{
+    //    PlayerHand.CheckIfFormerCubeIsChoosed(Cube.GetComponent<Collider>());
+    //}
     public void CheckCube()
     {
-        foreach (BlockEntity item in Q1_cube)
+        foreach (BlockEntity item in Cubes)
         {
             if (!item._isChose)
             {
@@ -409,42 +464,11 @@ public class BLockGameTask : TaskBase
                 _BlockFinished = true;
             }
         }
-        foreach (BlockEntity item in Q2_cube)
-        {
-            if (!item._isChose)
-            {
-                _BlockFinished = false;
-                break;
-            }
-            else
-            {
-                _BlockFinished = true;
-            }
-        }
-        foreach (BlockEntity item in Q3_cube)
-        {
-            if (!item._isChose)
-            {
-                _BlockFinished = false;
-                break;
-            }
-            else
-            {
-                _BlockFinished = true;
-            }
-        }
-        foreach (BlockEntity item in Q4_cube)
-        {
-            if (!item._isChose)
-            {
-                _BlockFinished = false;
-                break;
-            }
-            else
-            {
-                _BlockFinished = true;
-            }
-        }
+    }
+    public void TakeObject()//拼圖的氣球
+    {
+        var index = 2;/*Random.Range(0, 3);*/
+        npc.NPCTakeObject(objectlist[index]);
     }
     public void PutObject()
     {
