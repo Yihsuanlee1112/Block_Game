@@ -2780,6 +2780,8 @@ MonoBehaviour:
   Q3_cube: []
   Q4_cube: []
   Cubes: []
+  MyPreCube: {fileID: 0}
+  MyPreCubeIndex: 0
   npc: {fileID: 246050939}
   NPC_animator: {fileID: 602099464}
   Instantiate_Cube: {fileID: 5653061204827785930, guid: 04ac2b0bb78147a4192311c633b87394,
@@ -2792,6 +2794,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5b77d69fe98590641afaf62977ad2231, type: 3}
   - {fileID: 8300000, guid: 809fb81fd86bc8043af234d91147116e, type: 3}
   - {fileID: 8300000, guid: 0f157c35e9fcf674796258ee921be43a, type: 3}
+  - {fileID: 8300000, guid: 56210c2074e41e84e9d28063428ede50, type: 3}
   PutPosition: {fileID: 194928781}
   vrCamera: {fileID: 6516000211278019275, guid: 589a55ccf8b20104f93fe7d481c279ee,
     type: 3}
@@ -10361,6 +10364,11 @@ PrefabInstance:
     - target: {fileID: 5738208098700188314, guid: 559c9437765053f4dae86e3a5d9d47f1,
         type: 3}
       propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738208098700188314, guid: 559c9437765053f4dae86e3a5d9d47f1,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

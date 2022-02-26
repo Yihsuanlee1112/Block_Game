@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 //using SpeechLib;
 
 public class NPCEntity : GameEntityBase
@@ -11,6 +13,7 @@ public class NPCEntity : GameEntityBase
     public List<AudioClip> speechList;
     public GameObject npchand;
     private GameObject ObjectTaked;
+    private AudioClip clip;
     public static int Remindcount = 0;
 
     public override void EntityDispose()
@@ -21,6 +24,7 @@ public class NPCEntity : GameEntityBase
     public override void EntityInit()
     {
         GameEventCenter.AddEvent("NPCRemind", NPCRemind);
+        GameEventCenter.AddEvent("NPCRemind_Order", NPCRemind_Order);
     }
 
     
@@ -52,9 +56,26 @@ public class NPCEntity : GameEntityBase
     public void NPCRemind()
     {
         Remindcount++;
+        Debug.Log("hello!!!!!");
         BLockGameTask._npcremind = true;
         animator.Play("Talk");
+        //clip = Resources.Load<AudioClip>("AudioClip/NPC_Remind");
+        //GameAudioController.Instance.PlayOneShot(clip);
+        //yield return new WaitForSeconds(clip.length);
         GameAudioController.Instance.PlayOneShot(speechList[3]);//NPC_Remind
         
+    }
+    public void NPCRemind_Order()
+    {
+        Remindcount++;
+        Debug.Log("hi!!!!!");
+        BLockGameTask._npcremind = true;
+        animator.Play("Talk");
+        clip = Resources.Load<AudioClip>("AudioClip/NPC_Remind2");
+        //GameAudioController.Instance.PlayOneShot(clip);
+        //yield return new WaitForSeconds(clip.length);
+        GameAudioController.Instance.PlayOneShot(speechList[6]);//NPC_Remind_Order
+        Debug.Log("wait for clip.length sec");
+        Task.Delay((int)clip.length);
     }
 }

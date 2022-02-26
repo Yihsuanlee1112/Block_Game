@@ -25,11 +25,15 @@ public class BLockGameTask : TaskBase
     private List<BlockEntity> Q3_cube;
     private List<BlockEntity> Q4_cube;
     private List<BlockEntity> Cubes;
+    private HandsTrigger MyPreCube;
+    private HandsTrigger MyPreCubeIndex;
+    private HandsTrigger Blocks;
     private List<GameObject> objectlist;
     private CameraEntity eyecamera;
     private Canvas mainSceneUI;
     private Instantiate_Cube instantiate_Cube;
-    private HandsTrigger PlayerHand;
+    private AudioClip clip;
+    //private HandsTrigger PlayerHand;
     //private RecognizerEntity recognizerEntity;
     private string focusName;
     public static bool _playerRound = true;//原本是false
@@ -40,6 +44,7 @@ public class BLockGameTask : TaskBase
     public static bool _eyetimerfinish = false;
     public static bool _waitforwatch = false;
     public static int answerindex = 0;
+    //public static bool _NPCRemind = false;
     public int TalkScore = 0;//recognizerEntity
 
     public override IEnumerator TaskInit()
@@ -48,10 +53,9 @@ public class BLockGameTask : TaskBase
         GameEventCenter.AddEvent<BlockEntity>("CubeAns", CubeAns);
         GameEventCenter.AddEvent<string>("GetFocusName", GetFocusName);
         GameEventCenter.AddEvent("AddCubesToList", AddCubesToList);
-        //GameEventCenter.AddEvent<Collider>("CheckIfRightCube", CheckIfRightCube);
-
+        //GameEventCenter.AddEvent("NPC_Remind", NPC_Remind);
+        //GameEventCenter.AddEvent("NPC_Remind2", NPC_Remind2);
         //載入MainSceneRes
-
         player = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().player;
         npc = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().npc;
         instantiate_Cube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Instantiate_Cube;
@@ -60,6 +64,8 @@ public class BLockGameTask : TaskBase
         Q3_cube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Q3_cube;
         Q4_cube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Q4_cube;
         Cubes = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Cubes;
+        //MyPreCube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().MyPreCube;
+        //MyPreCubeIndex = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().MyPreCubeIndex;
         //objectlist = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().ObjectList;
         npc.npchand = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().NPCHand;
         npc.speechList = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().speechClip;
@@ -104,11 +110,17 @@ public class BLockGameTask : TaskBase
         //yield return SayHello();
         //Debug.Log("打完招呼");
 
+        // 框架
+        
         //規則說明要輪流拼
         //npc.animator.Play("Talk");
         npc.animator.SetBool("isTalk2", true);
-        GameAudioController.Instance.PlayOneShot(npc.speechList[5]);//NPC_Rule
-        yield return new WaitForSeconds(8.5f);
+        clip = Resources.Load<AudioClip>("AudioClip/NPC_Rule");
+        GameAudioController.Instance.PlayOneShot(clip);
+        yield return new WaitForSeconds(clip.length);
+        Debug.Log(clip.length);
+        //GameAudioController.Instance.PlayOneShot(npc.speechList[5]);//NPC_Rule
+        //yield return new WaitForSeconds(8.5f);
         npc.animator.SetBool("isTalk2", false);
         GameEventCenter.DispatchEvent("AddCubesToList");
 
@@ -116,69 +128,35 @@ public class BLockGameTask : TaskBase
         {
             if (_playerRound)  //玩家回合
             {
+                Debug.Log("User touch block"); 
                 yield return new WaitUntil(() => !_playerRound);
             }
             else  //NPC回合
             {
                 _npcremind = false;
-                foreach (BlockEntity cube in Q1_cube)
+                foreach (BlockEntity cube in Cubes)
                 {
-                    Debug.Log("NPC touch block");
                     if (!cube._isChose)
                     {
-                        Debug.Log("NPC touch block");
                         npc.animator.Play("Puzzle"); //npc拿積木
                         yield return new WaitForSeconds(7);
                         if (!_npcremind)
-                        {
+                        {   
+                            Debug.Log("NPC putting block");
                             GameEventCenter.DispatchEvent("CubeAns", cube);
                             _playerRound = true;
                         }
-                        break;
-                    }
-                }
-                foreach (BlockEntity cube in Q2_cube)
-                {
-                    if (!cube._isChose)
-                    {
-                        npc.animator.Play("Puzzle"); //npc拿積木
-                        yield return new WaitForSeconds(8);
-                        if (!_npcremind)
+                        else
                         {
-                            GameEventCenter.DispatchEvent("CubeAns", cube);
-                            _playerRound = true;
+                            Debug.Log("wait for remind");
+                            clip = Resources.Load<AudioClip>("AudioClip/NPC_Remind");
+                            yield return new WaitForSeconds(clip.length);
                         }
                         break;
+                        
                     }
                 }
-                foreach (BlockEntity cube in Q3_cube)
-                {
-                    if (!cube._isChose)
-                    {
-                        npc.animator.Play("Puzzle"); //npc拿積木
-                        yield return new WaitForSeconds(8);
-                        if (!_npcremind)
-                        {
-                            GameEventCenter.DispatchEvent("CubeAns", cube);
-                            _playerRound = true;
-                        }
-                        break;
-                    }
-                }
-                foreach (BlockEntity cube in Q4_cube)
-                {
-                    if (!cube._isChose)
-                    {
-                        npc.animator.Play("Puzzle"); //npc拿積木
-                        yield return new WaitForSeconds(8);
-                        if (!_npcremind)
-                        {
-                            GameEventCenter.DispatchEvent("CubeAns", cube);
-                            _playerRound = true;
-                        }
-                        break;
-                    }
-                }
+                
             }
 
             GameEventCenter.DispatchEvent("CheckCube");
@@ -206,23 +184,10 @@ public class BLockGameTask : TaskBase
         Q1_cube.Add(GameObject.Find("Q1BlueCube(Clone)").GetComponent<BlockEntity>());
         Q1_cube.Add(GameObject.Find("Q1RedCube(Clone)").GetComponent<BlockEntity>());
         Cubes.AddRange(Q1_cube);
-        foreach (BlockEntity cube in Cubes)
-        {
-            Debug.Log(cube);
-        }
-        //Cubes.AddRange(Q1_cube);
-        //Cubes.Clear();
-
-        //    foreach (BlockEntity cube in Q1_cube)
-
+        //foreach (BlockEntity cube in Cubes)
         //{
-        //    Debug.Log("find and put to Cubes!!!");
-
-        //    Cubes.Add(cube);
-        //    Debug.Log(Q1_cube[i]);
+        //    Debug.Log(cube);
         //}
-        //}
-
     }
     /*public void Instantiate_Cube()
     {
@@ -446,10 +411,7 @@ public class BLockGameTask : TaskBase
         Cubes.Add(Instantiate(Q4_Cube_Prefabs[9], position, Quaternion.identity));
     }
     */
-    //public void CheckIfRightCube(Collider Cube)
-    //{
-    //    PlayerHand.CheckIfFormerCubeIsChoosed(Cube.GetComponent<Collider>());
-    //}
+    
     public void CheckCube()
     {
         foreach (BlockEntity item in Cubes)
@@ -483,4 +445,12 @@ public class BLockGameTask : TaskBase
     {
         focusName = name;
     }
+    //public void NPC_Remind()
+    //{
+    //    StartCoroutine(npc.NPCRemind());
+    //}
+    //public void NPC_Remind2()
+    //{
+    //    npc.NPCRemind2();
+    //}
 }

@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class HandsTrigger : MonoBehaviour
 {
+    //private BlockEntity MyPreCube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().MyPreCube;
+    //private int MyPreCubeIndex = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().MyPreCubeIndex;
+    //private List<BlockEntity> Cubes = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Cubes;
+    private NPCEntity NPCEntity;
+    private BlockEntity MyPreCube;
+    private int MyPreCubeIndex;
+    private List<BlockEntity> Blocks;
+    //private bool _NPCRemind;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,39 +21,76 @@ public class HandsTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)//other=>cube
     {
-        
-        if (other.gameObject.tag == "cube" && !PlayerEntity._take && !other.GetComponent<BlockEntity>()._isChose)
+        var MyCube = other.GetComponent<BlockEntity>();//BLockEntity
+        var index = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Cubes.IndexOf(MyCube);//int
+        if (other.gameObject.tag == "cube" && !PlayerEntity._take && !other.GetComponent<BlockEntity>()._isChose && GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Cubes.Contains(MyCube))
         {
-            
+            other.GetComponent<BoxCollider>().isTrigger = false;
+            Debug.Log("Old" + MyPreCube + MyPreCubeIndex);
+            Debug.Log("New" + MyCube + index);
+            Debug.Log(index);//int
+            Debug.Log(index - MyPreCubeIndex);
             if (!BLockGameTask._playerRound)
             {
-               Debug.Log("Wrong Action");
-               GameEventCenter.DispatchEvent("NPCRemind");
+                //BLockGameTask._NPCRemind = true;
+                Debug.Log("Wrong Action");
+                //StartCoroutine(NPCEntity.NPCRemind());
+                GameEventCenter.DispatchEvent("NPCRemind");//輪流拼
             }
-            //else if(other)
-            
-            Debug.Log("Catch " + other.name);
-            
-            other.gameObject.GetComponent<Rigidbody>().useGravity = false;
-            other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            other.gameObject.transform.SetParent(gameObject.transform);
-            PlayerEntity._take = true;
-            //GameEventCenter.DispatchEvent("CheckIfRightCube");
+            else if (other.gameObject.GetComponent<BlockEntity>() == GameObject.Find("Q1BlueCuboid3(Clone)").GetComponent<BlockEntity>())
+            {
+                Debug.Log(other.gameObject.GetComponent<BlockEntity>());
+                //GameEventCenter.DispatchEvent("NPCRemind_Order"); 
+                other.GetComponent<BoxCollider>().isTrigger = false;
+                other.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+                other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                other.gameObject.transform.SetParent(gameObject.transform);
+            }
+            else if (index > 0 && index < 10 && index - MyPreCubeIndex != 2 || !GameObject.Find("Q1BlueCuboid3(Clone)").GetComponent<Rigidbody>().isKinematic)
+            {
+                Debug.Log("Wrong Cube, put 1 first");
+                GameEventCenter.DispatchEvent("NPCRemind_Order");
+                //StartCoroutine(NPCEntity.NPCRemind());
+                other.gameObject.transform.parent = null;
+                other.gameObject.GetComponent<Rigidbody>().useGravity = true;
+                other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            }
+            else if (GameObject.Find("Q1BlueCuboid3(Clone)").GetComponent<Rigidbody>().isKinematic)
+            {
+                Debug.Log("Catch " + other.name);
+                Debug.Log("follow hand");
+                Debug.Log(gameObject.name);
+                Debug.Log(other.gameObject.name);
+                other.GetComponent<BoxCollider>().isTrigger = false;
+                other.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+                other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                other.gameObject.transform.SetParent(gameObject.transform);
+                MyPreCube = other.GetComponent<BlockEntity>();//BlockEntity
+                MyPreCubeIndex = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Cubes.IndexOf(MyPreCube);//int
+                Debug.Log(MyPreCube + " " + MyPreCubeIndex);
+            }
+            if (!other.gameObject.GetComponent<Rigidbody>().isKinematic)
+            {
+                PlayerEntity._take = false;
+            }
+            else
+            {
+                PlayerEntity._take = true;
+            }
+            MyCube = MyPreCube;
+            index = MyPreCubeIndex;
+            Debug.Log(MyCube + " " + MyPreCube);
+            Debug.Log(index + " " + MyPreCubeIndex);
+        }
 
-            Debug.Log("follow hand");
-            Debug.Log(gameObject.name);
-            Debug.Log(other.gameObject.name);
-
-            //int MyCube = GetComponent<MainSceneRes>().Cubes.IndexOf(other.GetComponent<BlockEntity>());
-        
-            //Debug.Log(MyCube);
-        } 
-     
         else if (other.gameObject.tag == "q" && PlayerEntity._take)
         {
             Debug.Log("Put toAns");
@@ -64,24 +109,12 @@ public class HandsTrigger : MonoBehaviour
             Debug.Log(parent.transform.position);
             Debug.Log(cube.transform.position);
 
-
+            //GetComponent<BoxCollider>().enabled = false;
             BLockGameTask._playerRound = false;
             PlayerEntity._take = false;
         }
     }
-    //public bool CheckIfFormerCubeIsChoosed(Collider Cube)
-    //{
-    //    bool flag = true;
-    //    var parent = GameObject.Find("Question(Clone)");
-    //    PlayerEntity._take = false;
-    //    var myCube = GetComponent<MainSceneRes>().Q1_cube.IndexOf(Cube.GetComponent<BlockEntity>());
-    //    Debug.Log(myCube+"hahahahaha");
-    //    Cube.gameObject.transform.parent = null;
-    //    Debug.Log("Wrong Cube");
-    //    GameEventCenter.DispatchEvent("NPCRemind");
+}
 
-    //    return flag;
-    //}
-
- }
+ 
     

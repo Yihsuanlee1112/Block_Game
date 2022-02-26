@@ -16,6 +16,7 @@ public class BlockEntity : GameEntityBase
         _isChose = true;
         gameObject.transform.position = ansTransform.position;
         gameObject.transform.rotation = ansTransform.rotation;
+        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         Debug.Log(gameObject.name);
         Debug.Log("********"+ansTransform.position);
     }
