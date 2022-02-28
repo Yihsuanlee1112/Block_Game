@@ -98,8 +98,8 @@ public class HandsTrigger : MonoBehaviour
             var parent = GameObject.Find("Answer");
             //var parent = GameObject.FindGameObjectWithTag("QuestionArea");
             Debug.Log(parent);
-            //var cube = gameObject.transform.GetChild(5).gameObject.GetComponent<BlockEntity>();//hand底下的第6個
-            var cube = gameObject.transform.GetChild(0).gameObject.GetComponent<BlockEntity>();//FakeHand
+            var cube = gameObject.transform.GetChild(5).gameObject.GetComponent<BlockEntity>();//hand底下的第6個
+            //var cube = gameObject.transform.GetChild(0).gameObject.GetComponent<BlockEntity>();//FakeHand
             Debug.Log(cube);
             cube.GetComponent<Rigidbody>().useGravity = true;
             cube.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
@@ -116,7 +116,7 @@ public class HandsTrigger : MonoBehaviour
         }
         else if(other.gameObject.tag == "Rock4P")
         {
-            GameEventCenter.DispatchEvent("Close4PAni");
+            GameEventCenter.DispatchEvent("CloseAnimator4P");
             GameEventCenter.DispatchEvent("FourPlayerShowPaperResult");
             GameObject.FindGameObjectWithTag("Paper4P").SetActive(false);
             GameObject.FindGameObjectWithTag("Scissors4P").SetActive(false);

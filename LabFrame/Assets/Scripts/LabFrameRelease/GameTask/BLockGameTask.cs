@@ -198,7 +198,7 @@ public class BLockGameTask : TaskBase
         yield return new WaitForSeconds(5);
         
         GameObject.FindWithTag("Result").SetActive(false);
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < 2; i++)
         {
             GameObject.FindWithTag("RPS").SetActive(false);
         }

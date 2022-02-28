@@ -82,15 +82,18 @@ public class RockPaperScissors : MonoBehaviour
     }
     public void FourPlayerShowRockResult()
     {
-        
+
         //Rock
         //Result = Resources.Load<Sprite>("Animation/RockPaperScissors/RockPaperScissors_0");
 
         //Paper
         //Result = Resources.Load<Sprite>("Animation/RockPaperScissors/RockPaperScissors_1");
-        
+
         //Scissors
         //Result = Resources.Load<Sprite>("Animation/RockPaperScissors/RockPaperScissors_2");
+        FourP1Ani.SetBool("isRPS", false);
+        FourP2Ani.SetBool("isRPS", false);
+        FourP3Ani.SetBool("isRPS", false);
 
         position = new Vector3((float)-0.1, (float)1.3, (float)2.0);
         Result = Instantiate(rockPaperScissorsResult[0], position, Quaternion.Euler(0, 15, 0));
@@ -108,6 +111,10 @@ public class RockPaperScissors : MonoBehaviour
     }
     public void FourPlayerShowPaperResult()
     {
+        FourP1Ani.SetBool("isRPS", false);
+        FourP2Ani.SetBool("isRPS", false);
+        FourP3Ani.SetBool("isRPS", false);
+
         position = new Vector3((float)-0.1, (float)1.3, (float)2.0);
         Result = Instantiate(rockPaperScissorsResult[1], position, Quaternion.Euler(0, 15, 0));
         Debug.Log(Result);
@@ -122,6 +129,10 @@ public class RockPaperScissors : MonoBehaviour
     }
     public void FourPlayerShowScissorsResult()
     {
+        FourP1Ani.SetBool("isRPS", false);
+        FourP2Ani.SetBool("isRPS", false);
+        FourP3Ani.SetBool("isRPS", false);
+
         position = new Vector3((float)-0.1, (float)1.3, (float)2.0);
         Result = Instantiate(rockPaperScissorsResult[2], position, Quaternion.Euler(0, 15, 0));
         Debug.Log(Result);
@@ -136,18 +147,23 @@ public class RockPaperScissors : MonoBehaviour
     }
     public void TwoPlayerShowRockResult()
     {
+        TwoPAni.SetBool("isRPS", false);
         position = new Vector3((float)1.378, (float)1.0, (float)3.6);
         Result = Instantiate(rockPaperScissorsResult[0], position, Quaternion.identity);
         Debug.Log(Result);
     }
     public void TwoPlayerShowPaperResult()
     {
+        TwoPAni.SetBool("isRPS", false);
+
         position = new Vector3((float)1.378, (float)1.12, (float)3.6);
         Result = Instantiate(rockPaperScissorsResult[1], position, Quaternion.identity);
         Debug.Log(Result);
     }
     public void TwoPlayerShowScissorsResult()
     {
+        TwoPAni.SetBool("isRPS", false);
+
         position = new Vector3((float)1.378, (float)1.12, (float)3.6);
         Result = Instantiate(rockPaperScissorsResult[2], position, Quaternion.identity);
         Debug.Log(Result);
