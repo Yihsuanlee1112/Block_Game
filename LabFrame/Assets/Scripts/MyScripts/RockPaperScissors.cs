@@ -7,21 +7,25 @@ public class RockPaperScissors : MonoBehaviour
 {
     Vector3 position;
     Vector3 pos;
-    //Sprite Result;
     GameObject Result;
-    //Button myRPSButton;
     public List<GameObject> rockPaperScissors;
-    //public List<Sprite> rockPaperScissorsResult;
     public List<GameObject> rockPaperScissorsResult;
     public List<GameObject> RPS;
-    //public List<Sprite> RPSResult;
     public List<GameObject> RPSResult;
     public Animator RPS_Animator;
-    //GameObject rps;
-    // Start is called before the first frame update
-    void Start()
+    public Animator FourP1Ani, FourP2Ani, FourP3Ani, TwoPAni;
+    void Awake()
     {
-        
+        GameEventCenter.AddEvent("FourPlayerRPS", FourPlayerRPS);
+        GameEventCenter.AddEvent("TwoPlayerRPS", TwoPlayerRPS);
+        GameEventCenter.AddEvent("FourPlayerShowRockResult", FourPlayerShowRockResult);
+        GameEventCenter.AddEvent("FourPlayerShowPaperResult", FourPlayerShowPaperResult);
+        GameEventCenter.AddEvent("FourPlayerShowScissorsResult", FourPlayerShowScissorsResult);
+        GameEventCenter.AddEvent("TwoPlayerShowRockResult", TwoPlayerShowRockResult);
+        GameEventCenter.AddEvent("TwoPlayerShowPaperResult", TwoPlayerShowPaperResult);
+        GameEventCenter.AddEvent("TwoPlayerShowScissorsResult", TwoPlayerShowScissorsResult);
+        GameEventCenter.AddEvent("CloseAnimator2P", CloseAnimator2P);
+        GameEventCenter.AddEvent("CloseAnimator4P", CloseAnimator4P);
     }
 
     // Update is called once per frame
@@ -31,6 +35,7 @@ public class RockPaperScissors : MonoBehaviour
     }
     public void FourPlayerRPS()
     {
+        BLockGameTask._userChooseRPS = false;
         //RPS_Animator
         position = new Vector3((float)-0.1, (float)1.3, (float)1.97);
         //RPS.Add(Instantiate(rockPaperScissors[0], position, Quaternion.identity));
@@ -49,17 +54,17 @@ public class RockPaperScissors : MonoBehaviour
         pos = rockPaperScissors[5].transform.position;
         //RPS.Add(Instantiate(rockPaperScissors[3], position, Quaternion.identity));
         Instantiate(rockPaperScissors[5], pos, Quaternion.identity);
-        //RPS_Animator = Resources.Load<Animator>("Animation/RockPaperScissors");
-        RPS_Animator.SetTrigger("RPS");
-        Debug.Log(RPS_Animator);
-        //RPS_Animator.SetTrigger("Idle");
-        //RPS_Animator.SetBool("StartRPS", true);
 
-        //myRPSButton.interactable = false;
-
+        FourP1Ani = GameObject.Find("RockPaperScissors4P_1(Clone)").GetComponent<Animator>();
+        FourP2Ani = GameObject.Find("RockPaperScissors4P_2(Clone)").GetComponent<Animator>();
+        FourP3Ani = GameObject.Find("RockPaperScissors4P_3(Clone)").GetComponent<Animator>();
+        FourP1Ani.SetBool("isRPS", true);
+        FourP2Ani.SetBool("isRPS", true);
+        FourP3Ani.SetBool("isRPS", true);    
     }
     public void TwoPlayerRPS()
     {
+        BLockGameTask._userChooseRPS = false;
         position = new Vector3((float)1.378, (float)1.144, (float)3.468);
         //RPS.Add(Instantiate(rockPaperScissors[2], position, Quaternion.identity));
         Instantiate(rockPaperScissors[0], position, Quaternion.identity);
@@ -69,6 +74,11 @@ public class RockPaperScissors : MonoBehaviour
         pos = rockPaperScissors[4].transform.position;
         //RPS.Add(Instantiate(rockPaperScissors[0], position, Quaternion.identity));
         Instantiate(rockPaperScissors[4], pos, Quaternion.identity);
+
+        TwoPAni = GameObject.Find("RockPaperScissors2P(Clone)").GetComponent<Animator>();
+        TwoPAni.SetBool("isRPS", true);
+        //TwoPAni.GetComponent<Animator>().SetBool("isRPS", true);
+        Debug.Log("StartAni");
     }
     public void FourPlayerShowRockResult()
     {
@@ -142,5 +152,19 @@ public class RockPaperScissors : MonoBehaviour
         Result = Instantiate(rockPaperScissorsResult[2], position, Quaternion.identity);
         Debug.Log(Result);
     }
+    public void CloseAnimator2P()
+    {
+        TwoPAni.SetBool("isRPS", false);
+        Debug.Log("2PAniStop");
+    }
+    public void CloseAnimator4P()
+    {
+        Debug.Log("AniStop!!!!");
+
+        FourP1Ani.SetBool("isRPS", false);
+        FourP2Ani.SetBool("isRPS", false);
+        FourP3Ani.SetBool("isRPS", false);
+        Debug.Log("4PAniStop");
+    }    
 
 }

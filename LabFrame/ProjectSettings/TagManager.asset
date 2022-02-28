@@ -21,6 +21,14 @@ TagManager:
   - FxTemporaire
   - QuestionArea
   - q
+  - userHand
+  - Rock4P
+  - Scissors4P
+  - Paper4P
+  - Rock2P
+  - Scissors2P
+  - Paper2P
+  - Result
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,7 @@ public class MainSceneRes : GameSceneEntityRes
     public NPCEntity npc;
     public Animator NPC_animator;
     public Instantiate_Cube Instantiate_Cube;
+    public RockPaperScissors RockPaperScissors;
     public CameraEntity eyeCamera;
     public List<AudioClip> speechClip;
     //public RecognizerEntity recognizerEntity;

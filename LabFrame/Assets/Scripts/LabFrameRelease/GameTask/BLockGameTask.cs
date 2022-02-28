@@ -25,17 +25,23 @@ public class BLockGameTask : TaskBase
     private List<BlockEntity> Q3_cube;
     private List<BlockEntity> Q4_cube;
     private List<BlockEntity> Cubes;
-    private HandsTrigger MyPreCube;
-    private HandsTrigger MyPreCubeIndex;
-    private HandsTrigger Blocks;
-    private List<GameObject> objectlist;
+    //private HandsTrigger MyPreCube;
+    //private HandsTrigger MyPreCubeIndex;
+    //private HandsTrigger Blocks;
+    //private List<GameObject> objectlist;
     private CameraEntity eyecamera;
     private Canvas mainSceneUI;
     private Instantiate_Cube instantiate_Cube;
+    private RockPaperScissors RockPaperScissors;
     private AudioClip clip;
+    private Animator TeacherAnimator;
+    //private Animator FourP1Ani, FourP2Ani, FourP3Ani, TwoPAni;
+    //private Animator RPS_Animator;
+
     //private HandsTrigger PlayerHand;
     //private RecognizerEntity recognizerEntity;
     private string focusName;
+    public static bool _userChooseRPS = false;
     public static bool _playerRound = true;//原本是false
     public bool _BlockFinished = false;
     public static bool _usersayhello = false;
@@ -53,12 +59,17 @@ public class BLockGameTask : TaskBase
         GameEventCenter.AddEvent<BlockEntity>("CubeAns", CubeAns);
         GameEventCenter.AddEvent<string>("GetFocusName", GetFocusName);
         GameEventCenter.AddEvent("AddCubesToList", AddCubesToList);
+        //GameEventCenter.AddEvent("RPS2P", RPS2P);
+        //GameEventCenter.AddEvent("RPS4P", RPS4P);
+        //GameEventCenter.AddEvent("Close4PAni", Close4PAni);
+
         //GameEventCenter.AddEvent("NPC_Remind", NPC_Remind);
         //GameEventCenter.AddEvent("NPC_Remind2", NPC_Remind2);
         //載入MainSceneRes
         player = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().player;
         npc = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().npc;
         instantiate_Cube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Instantiate_Cube;
+        RockPaperScissors = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().RockPaperScissors;
         Q1_cube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Q1_cube;
         Q2_cube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Q2_cube;
         Q3_cube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Q3_cube;
@@ -101,24 +112,109 @@ public class BLockGameTask : TaskBase
 
     public override IEnumerator TaskStart()
     {
+        TeacherAnimator = GameObject.Find("teacher").GetComponent<Animator>();
+        //FourP1Ani = GameObject.Find("RockPaperScissors4P_1").GetComponent<Animator>();
+        //FourP2Ani = GameObject.Find("RockPaperScissors4P_2").GetComponent<Animator>();
+        //FourP3Ani = GameObject.Find("RockPaperScissors4P_3").GetComponent<Animator>();
+        //TwoPAni = GameObject.Find("RockPaperScissors2P").GetComponent<Animator>();
+        //RPS_Animator = GameObject.Find("RockPaperScissors4P_1").GetComponent<Animator>();
+
         //邀請小朋友一起堆積木
         //npc.animator.Play("Talk");
         //GameAudioController.Instance.PlayOneShot(npc.speechList[0]);
         //yield return new WaitForSeconds(1.5f);
 
-        ////打招呼
+        //打招呼
         //yield return SayHello();
-        //Debug.Log("打完招呼");
+        TeacherAnimator.SetBool("isSayingHello", true);
+        clip = Resources.Load<AudioClip>("AudioClip/Teacher_SayHi");
+        GameAudioController.Instance.PlayOneShot(clip);
+        yield return new WaitForSeconds(clip.length );
+        Debug.Log("AudioClip/Teacher_SayHi" + clip.length);
+        Debug.Log("打完招呼");
+        TeacherAnimator.SetBool("isSayingHello", false);
+
+        //老師開場
+        TeacherAnimator.SetBool("isStandingAndTalking", true);
+        clip = Resources.Load<AudioClip>("AudioClip/Teacher_Opening");
+        GameAudioController.Instance.PlayOneShot(clip);
+        yield return new WaitForSeconds(clip.length + 3);
+        Debug.Log("AudioClip/Teacher_Opening" + clip.length);
+        Debug.Log("老師開完場");
+        TeacherAnimator.SetBool("isStandingAndTalking", false);
+
+        //老師說明遊戲規則
+        TeacherAnimator.SetBool("isStandingAndTalking", true);
+        clip = Resources.Load<AudioClip>("AudioClip/Teacher_Introduction");
+        GameAudioController.Instance.PlayOneShot(clip);
+        yield return new WaitForSeconds(clip.length + 1);
+        Debug.Log("AudioClip/Teacher_Introduction" + clip.length);
+        Debug.Log("老師說完遊戲規則");
+        TeacherAnimator.SetBool("isStandingAndTalking", false);
+
+        //老師問選圖
+        TeacherAnimator.SetBool("isAsking", true);
+        clip = Resources.Load<AudioClip>("AudioClip/Teacher_Ask");
+        GameAudioController.Instance.PlayOneShot(clip);
+        yield return new WaitForSeconds(clip.length + 3);
+        Debug.Log("AudioClip/Teacher_Ask" + clip.length);
+        Debug.Log("老師問完選圖");
+        TeacherAnimator.SetBool("isAsking", false);
+
+        //User跟其他三組猜拳
+        
+        GameEventCenter.DispatchEvent("FourPlayerRPS");
+        while (!_userChooseRPS)
+        {
+            Debug.Log("User choose RPS");
+            yield return new WaitUntil(() => _userChooseRPS);
+        }
+        yield return new WaitForSeconds(5);
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject.FindWithTag("RPS").SetActive(false);
+        }
+        for (int i=0; i<3; i++)
+        {
+            GameObject.FindWithTag("Result").SetActive(false);
+        }
+        
+        yield return new WaitForSeconds(10);
+
+        //User跟對面NPC猜拳
+        npc.animator.SetBool("isTalk", true);
+        clip = Resources.Load<AudioClip>("AudioClip/NPC_WinnerFirst");
+        GameAudioController.Instance.PlayOneShot(clip);
+        yield return new WaitForSeconds(clip.length + 3);
+        npc.animator.SetBool("isTalk", false);
+        GameEventCenter.DispatchEvent("TwoPlayerRPS");
+        while (!_userChooseRPS)
+        {
+            Debug.Log("User choose RPS");
+            yield return new WaitUntil(() => _userChooseRPS);
+        }
+        //TwoPAni = GameObject.Find("RockPaperScissors2P(Clone)").GetComponent<Animator>();
+        //TwoPAni.SetBool("isRPS", true);
+        yield return new WaitForSeconds(5);
+        
+        GameObject.FindWithTag("Result").SetActive(false);
+        for (int i = 0; i < 1; i++)
+        {
+            GameObject.FindWithTag("RPS").SetActive(false);
+        }
+
+
+        yield return new WaitForSeconds(10);
 
         // 框架
-        
+
         //規則說明要輪流拼
         //npc.animator.Play("Talk");
         npc.animator.SetBool("isTalk2", true);
         clip = Resources.Load<AudioClip>("AudioClip/NPC_Rule");
         GameAudioController.Instance.PlayOneShot(clip);
         yield return new WaitForSeconds(clip.length);
-        Debug.Log(clip.length);
+        Debug.Log("AudioClip/NPC_Rule" + clip.length);
         //GameAudioController.Instance.PlayOneShot(npc.speechList[5]);//NPC_Rule
         //yield return new WaitForSeconds(8.5f);
         npc.animator.SetBool("isTalk2", false);
@@ -427,10 +523,36 @@ public class BLockGameTask : TaskBase
             }
         }
     }
+
+    //public void RPS2P()
+    //{
+    //    RockPaperScissors.TwoPlayerRPS();
+    //    TwoPAni = GameObject.Find("RockPaperScissors2P(Clone)").GetComponent<Animator>();
+    //    TwoPAni.SetBool("isRPS", true);
+    //    //TwoPAni.GetComponent<Animator>().SetBool("isRPS", true);
+    //    Debug.Log("StartAni");
+    //}
+    //public void RPS4P()
+    //{
+        //RockPaperScissors.FourPlayerRPS();
+        //FourP1Ani = GameObject.Find("RockPaperScissors4P_1(Clone)").GetComponent<Animator>();
+        //FourP2Ani = GameObject.Find("RockPaperScissors4P_2(Clone)").GetComponent<Animator>();
+        //FourP3Ani = GameObject.Find("RockPaperScissors4P_3(Clone)").GetComponent<Animator>();
+        //FourP1Ani.SetBool("isRPS", true);
+        //FourP2Ani.SetBool("isRPS", true);
+        //FourP3Ani.SetBool("isRPS", true);
+        //Debug.Log("StartAni");
+    //}
+    //public void Close4PAni()
+    //{
+    //    RockPaperScissors.CloseAnimator4P();
+    //    //TwoPAni.SetBool("isRPS", false);
+    //}
+
     public void TakeObject()//拼圖的氣球
     {
         var index = 2;/*Random.Range(0, 3);*/
-        npc.NPCTakeObject(objectlist[index]);
+        //npc.NPCTakeObject(objectlist[index]);
     }
     public void PutObject()
     {

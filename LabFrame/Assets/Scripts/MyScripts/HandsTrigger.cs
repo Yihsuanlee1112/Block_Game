@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class HandsTrigger : MonoBehaviour
 {
-    //private BlockEntity MyPreCube = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().MyPreCube;
-    //private int MyPreCubeIndex = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().MyPreCubeIndex;
-    //private List<BlockEntity> Cubes = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Cubes;
     private NPCEntity NPCEntity;
     private BlockEntity MyPreCube;
     private int MyPreCubeIndex;
     private List<BlockEntity> Blocks;
+    private RockPaperScissors RockPaperScissors;
     //private bool _NPCRemind;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +27,8 @@ public class HandsTrigger : MonoBehaviour
     {
         var MyCube = other.GetComponent<BlockEntity>();//BLockEntity
         var index = GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Cubes.IndexOf(MyCube);//int
-        if (other.gameObject.tag == "cube" && !PlayerEntity._take && !other.GetComponent<BlockEntity>()._isChose && GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Cubes.Contains(MyCube))
+        if (other.gameObject.tag == "cube" && !PlayerEntity._take &&
+            !other.GetComponent<BlockEntity>()._isChose && GameEntityManager.Instance.GetCurrentSceneRes<MainSceneRes>().Cubes.Contains(MyCube))
         {
             other.GetComponent<BoxCollider>().isTrigger = false;
             Debug.Log("Old" + MyPreCube + MyPreCubeIndex);
@@ -52,7 +52,8 @@ public class HandsTrigger : MonoBehaviour
                 other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 other.gameObject.transform.SetParent(gameObject.transform);
             }
-            else if (index > 0 && index < 10 && index - MyPreCubeIndex != 2 || !GameObject.Find("Q1BlueCuboid3(Clone)").GetComponent<Rigidbody>().isKinematic)
+            else if (index > 0 && index < 10 && index - MyPreCubeIndex != 2
+                || !GameObject.Find("Q1BlueCuboid3(Clone)").GetComponent<Rigidbody>().isKinematic)
             {
                 Debug.Log("Wrong Cube, put 1 first");
                 GameEventCenter.DispatchEvent("NPCRemind_Order");
@@ -112,6 +113,60 @@ public class HandsTrigger : MonoBehaviour
             //GetComponent<BoxCollider>().enabled = false;
             BLockGameTask._playerRound = false;
             PlayerEntity._take = false;
+        }
+        else if(other.gameObject.tag == "Rock4P")
+        {
+            GameEventCenter.DispatchEvent("Close4PAni");
+            GameEventCenter.DispatchEvent("FourPlayerShowPaperResult");
+            GameObject.FindGameObjectWithTag("Paper4P").SetActive(false);
+            GameObject.FindGameObjectWithTag("Scissors4P").SetActive(false);
+            BLockGameTask._userChooseRPS = true;
+            Debug.Log("User choose rock");
+        }
+        else if(other.gameObject.tag == "Scissors4P")
+        {
+            GameEventCenter.DispatchEvent("CloseAnimator4P");
+            GameEventCenter.DispatchEvent("FourPlayerShowRockResult");
+            GameObject.FindGameObjectWithTag("Paper4P").SetActive(false);
+            GameObject.FindGameObjectWithTag("Rock4P").SetActive(false);
+            BLockGameTask._userChooseRPS = true;
+            Debug.Log("User choose Scissors");
+        }
+        else if(other.gameObject.tag == "Paper4P")
+        {
+            GameEventCenter.DispatchEvent("CloseAnimator4P");
+            GameEventCenter.DispatchEvent("FourPlayerShowScissorsResult");
+            GameObject.FindGameObjectWithTag("Rock4P").SetActive(false);
+            GameObject.FindGameObjectWithTag("Scissors4P").SetActive(false);
+            BLockGameTask._userChooseRPS = true;
+            Debug.Log("User choose paper");
+        }
+        else if(other.gameObject.tag == "Rock2P")
+        {
+            GameEventCenter.DispatchEvent("CloseAnimator2P");
+            GameEventCenter.DispatchEvent("TwoPlayerShowScissorsResult");
+            GameObject.FindGameObjectWithTag("Paper2P").SetActive(false);
+            GameObject.FindGameObjectWithTag("Scissors2P").SetActive(false);
+            BLockGameTask._userChooseRPS = true;
+            Debug.Log("User choose rock");
+        }
+        else if(other.gameObject.tag == "Scissors2P")
+        {
+            GameEventCenter.DispatchEvent("CloseAnimator2P");
+            GameEventCenter.DispatchEvent("TwoPlayerShowPaperResult");
+            GameObject.FindGameObjectWithTag("Paper2P").SetActive(false);
+            GameObject.FindGameObjectWithTag("Rock2P").SetActive(false);
+            BLockGameTask._userChooseRPS = true;
+            Debug.Log("User choose scissors");
+        }
+        else if(other.gameObject.tag == "Paper2P")
+        {
+            GameEventCenter.DispatchEvent("CloseAnimator2P");
+            GameEventCenter.DispatchEvent("TwoPlayerShowRockResult");
+            GameObject.FindGameObjectWithTag("Rock2P").SetActive(false);
+            GameObject.FindGameObjectWithTag("Scissors2P").SetActive(false);
+            BLockGameTask._userChooseRPS = true;
+            Debug.Log("User choose paper");
         }
     }
 }
