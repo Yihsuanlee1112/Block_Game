@@ -120,6 +120,7 @@ public class HandsTrigger : MonoBehaviour
             GameEventCenter.DispatchEvent("FourPlayerShowPaperResult");
             GameObject.FindGameObjectWithTag("Paper4P").SetActive(false);
             GameObject.FindGameObjectWithTag("Scissors4P").SetActive(false);
+            GameObject.Find("Rock").GetComponent<BoxCollider>().isTrigger = true;
             BLockGameTask._userChooseRPS = true;
             Debug.Log("User choose rock");
         }
@@ -129,6 +130,7 @@ public class HandsTrigger : MonoBehaviour
             GameEventCenter.DispatchEvent("FourPlayerShowRockResult");
             GameObject.FindGameObjectWithTag("Paper4P").SetActive(false);
             GameObject.FindGameObjectWithTag("Rock4P").SetActive(false);
+            GameObject.Find("Scissors").GetComponent<BoxCollider>().isTrigger = true;
             BLockGameTask._userChooseRPS = true;
             Debug.Log("User choose Scissors");
         }
@@ -138,6 +140,7 @@ public class HandsTrigger : MonoBehaviour
             GameEventCenter.DispatchEvent("FourPlayerShowScissorsResult");
             GameObject.FindGameObjectWithTag("Rock4P").SetActive(false);
             GameObject.FindGameObjectWithTag("Scissors4P").SetActive(false);
+            GameObject.Find("Paper").GetComponent<BoxCollider>().isTrigger = true;
             BLockGameTask._userChooseRPS = true;
             Debug.Log("User choose paper");
         }
@@ -147,6 +150,7 @@ public class HandsTrigger : MonoBehaviour
             GameEventCenter.DispatchEvent("TwoPlayerShowScissorsResult");
             GameObject.FindGameObjectWithTag("Paper2P").SetActive(false);
             GameObject.FindGameObjectWithTag("Scissors2P").SetActive(false);
+            GameObject.Find("Rock").GetComponent<BoxCollider>().isTrigger = true;
             BLockGameTask._userChooseRPS = true;
             Debug.Log("User choose rock");
         }
@@ -156,6 +160,7 @@ public class HandsTrigger : MonoBehaviour
             GameEventCenter.DispatchEvent("TwoPlayerShowPaperResult");
             GameObject.FindGameObjectWithTag("Paper2P").SetActive(false);
             GameObject.FindGameObjectWithTag("Rock2P").SetActive(false);
+            GameObject.Find("Scissors").GetComponent<BoxCollider>().isTrigger = true;
             BLockGameTask._userChooseRPS = true;
             Debug.Log("User choose scissors");
         }
@@ -165,6 +170,7 @@ public class HandsTrigger : MonoBehaviour
             GameEventCenter.DispatchEvent("TwoPlayerShowRockResult");
             GameObject.FindGameObjectWithTag("Rock2P").SetActive(false);
             GameObject.FindGameObjectWithTag("Scissors2P").SetActive(false);
+            GameObject.Find("Paper").GetComponent<BoxCollider>().isTrigger = true;
             BLockGameTask._userChooseRPS = true;
             Debug.Log("User choose paper");
         }
